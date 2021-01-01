@@ -1,0 +1,189 @@
+//#include<stdio.h>
+//
+//int fact(int n)
+//{
+//    int j = 1, sum = 1;
+//    for (j = 1; j <= n; j++)
+//    {
+//        sum = sum * j;
+//    }
+//    return sum;
+//}
+////int main()
+////{
+////    int a, b, flag = 0;
+////    scanf_s("%d %d", &a, &b);
+////    for (int i = a; i <= b; i++)
+////    {
+////        int num = i * i + 1;
+////        if (num % fact(i) == 0)
+////        {
+////            printf("%d\n", i);
+////            flag = 1;
+////        }
+////    }
+////    if (!flag)
+////        printf("None\n");
+////    return 0;
+////}
+//
+//int main()
+//{
+//    int n;
+//    scanf_s("%d", &n);
+//    printf("%d", fact(n));
+//    return 0;
+//}
+
+
+//#include<stdio.h>
+//
+//int main()
+//{
+//    int n, a, b;
+//    scanf_s("%d", &n);
+//    for (int i = 0; i < n; i++)
+//    {
+//        scanf_s("%d %d", &a, &b);
+//        if (a == 1)
+//        {
+//            if (b == 3)
+//                printf("1 sheng 3\n");
+//            if (b == 2)
+//                printf("1 ke 2\n");
+//            if (b == 5)
+//                printf("5 sheng 1\n");
+//            if (b == 4)
+//                printf("4 ke 1\n");
+//        }
+//        if (a == 2)
+//        {
+//            if (b == 1)
+//                printf("1 ke 2\n");
+//            if (b == 4)
+//                printf("2 sheng 4\n");
+//            if (b == 5)
+//                printf("2 ke 5\n");
+//            if (b == 3)
+//                printf("3 sheng 2\n");
+//        }
+//        if (a == 3)
+//        {
+//            if (b == 1)
+//                printf("1 sheng 3\n");
+//            if (b == 2)
+//                printf("3 sheng 2\n");
+//            if (b == 5)
+//                printf("5 ke 3\n");
+//            if (b == 4)
+//                printf("3 ke 4\n");
+//        }
+//        if (a == 4)
+//        {
+//            if (b == 2)
+//                printf("2 sheng 4\n");
+//            if (b == 5)
+//                printf("4 sheng 5\n");
+//            if (b == 3)
+//                printf("3 ke 4\n");
+//            if (b == 1)
+//                printf("4 ke 1\n");
+//        }
+//        if (a == 5)
+//        {
+//            if (b == 4)
+//                printf("4 sheng 5\n");
+//            if (b == 1)
+//                printf("5 sheng 1\n");
+//            if (b == 2)
+//                printf("2 ke 5\n");
+//            if (b == 3)
+//                printf("5 ke 3\n");
+//        }
+//    }
+//    return 0;
+//}
+
+
+//#include<stdio.h>
+//
+//int main()
+//{
+//    int n, a, b, c;
+//    scanf_s("%d", &n);
+//    for (int i = 0; i < n; i++)
+//    {
+//        scanf_s("%d %d %d", &a, &b, &c);
+//        if (a * a + b * b + c * c == 3 * a * b * c)
+//            printf("Yes\n");
+//        else
+//            printf("No\n");
+//    }
+//    return 0;
+//}
+
+
+//#include<stdio.h>
+//
+//int main()
+//{
+//    int a;
+//    scanf("%d", &a);
+//    double b = a / 1000.0;
+//    if (b >= 0 && b <= 5.75)
+//        printf("10\n");
+//    else if (b > 5.75 && b <= 13.75)
+//        printf("9\n");
+//    else if (b > 13.75 && b <= 21.75)
+//        printf("8\n");
+//    else if (b > 21.75 && b <= 29.75)
+//        printf("7\n");
+//    else if (b > 29.75 && b <= 37.75)
+//        printf("6\n");
+//    else if (b > 37.75 && b <= 45.75)
+//        printf("5\n");
+//    else if (b > 45.75 && b <= 53.75)
+//        printf("4\n");
+//    else if (b > 53.75 && b <= 61.75)
+//        printf("3\n");
+//    else if (b > 61.75 && b <= 69.75)
+//        printf("2\n");
+//    else if (b > 69.75 && b <= 77.75)
+//        printf("1\n");
+//    else
+//        printf("0\n");
+//    return 0;
+//}
+
+
+//#include<stdio.h>
+//
+//struct ren {
+//    char name[20];
+//    char birthday[20];
+//    char sec;
+//    char tele[20];
+//    char didi[20];
+//};
+//int main()
+//{
+//    struct ren Ren[11];
+//    int n;
+//    scanf_s("%d", &n);
+//    for (int i = 0; i < n; i++)
+//    {
+//        getchar();
+//        scanf_s("%s %s %c %s %s", Ren[i].name, Ren[i].birthday, &Ren[i].sec, Ren[i].tele, Ren[i].didi);
+//    }
+//    int m, k;
+//    scanf_s("%d", &m);
+//    for (int i = 0; i < m; i++)
+//    {
+//        scanf_s("%d", &k);
+//        if (k < n && k >= 0)
+//            printf("%s %s %s %c %s\n", Ren[k].name, Ren[k].tele, Ren[k].didi, Ren[k].sec, Ren[k].birthday);
+//        else
+//            printf("Not Found\n");
+//    }
+//    return 0;
+//}
