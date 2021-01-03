@@ -1,0 +1,213 @@
+//#include <stdio.h>
+//#define MAXN 10
+//
+//struct student {
+//    int num;
+//    char name[20];
+//    int score;
+//    char grade;
+//};
+//
+//int set_grade(struct student* p, int n);
+//
+//int main()
+//{
+//    struct student stu[MAXN], * ptr;
+//    int n, i, count;
+//
+//    ptr = stu;
+//    scanf_s("%d\n", &n);
+//    for (i = 0; i < n; i++) {
+//        scanf_s("%d %s %d", &stu[i].num, stu[i].name, &stu[i].score);
+//    }
+//    count = set_grade(ptr, n);
+//    printf("The count for failed (<60): %d\n", count);
+//    printf("The grades:\n");
+//    for (i = 0; i < n; i++)
+//        printf("%d %s %c\n", stu[i].num, stu[i].name, stu[i].grade);
+//    return 0;
+//}
+//
+//int set_grade(struct student* p, int n)
+//{
+//    int count = 0;
+//    for (int i = 0; i < n; i++)
+//    {
+//        if (p->score < 60)
+//        {
+//            p->grade = 'D';
+//            count++;
+//        }
+//        else if (p->score >= 60 && p->score <= 69)
+//            p->grade = 'C';
+//        else if (p->score >= 70 && p->score <= 84)
+//            p->grade = 'B';
+//        else
+//            p->grade = 'A';
+//        p++;
+//    }
+//    return count;
+//}
+
+
+//#include<stdio.h>
+//
+//int main()
+//{
+//    int n=0, sum = 0;
+//    scanf_s("%d ", &n);
+//    while (n > 0)
+//    {
+//        if (n % 2 != 0)
+//        {
+//            sum = sum + n;
+//        }
+//        scanf_s("%d ", &n);
+//    }
+//    printf("%d", sum);
+//
+//    return 0;
+//}
+
+
+//#include<stdio.h>
+//
+//int main()
+//{
+//    char* ch[] = { "Sunday","Monday","Tuesday","Wednesday","Thursday","friday","Saturday" };
+//    char arr[20];
+//    int n, i, j;
+//    scanf_s("%d", &n);
+//    for (i = 0; i < n; i++)
+//    {
+//        scanf_s("%s", arr);
+//        for (j = 0; j < 7; j++)
+//            if (!strcmp(ch[j], arr))
+//                break;
+//        if (j >= 7)
+//            printf("-1\n");
+//        else
+//            printf("%d\n", j + 1);
+//        getchar();
+//    }
+//    return 0;
+//}
+
+
+//#include <stdio.h>
+//int main()
+//{
+//    int i = 0;
+//    //5个学生
+//    for (i = 0; i < 5; i++)
+//    {
+//        double sum = 0.0;
+//        int j = 0;
+//        double score = 0.0;
+//        for (j = 0; j < 5; j++)
+//        {
+//            scanf("%lf", &score);
+//            sum += score;
+//            printf("%.1lf ", score);
+//        }
+//        printf("%.1lf\n", sum);
+//    }
+//    return 0;
+//}
+
+
+//#include <stdio.h>
+//int main()
+//{
+//    int n = 0;
+//    int m = 0;
+//    int x = 0;
+//    int y = 0;
+//    scanf("%d %d", &n, &m);
+//    //这是c99语法-变长数组，但是数组不能初始化
+//    int arr[n][m];//具体给值也行
+//    int i = 0;
+//    int j = 0;
+//    for (i = 0; i < n; i++)
+//    {
+//        for (j = 0; j < m; j++)
+//        {
+//            scanf("%d", &arr[i][j]);
+//        }
+//    }
+//    scanf("%d%d", &x, &y);
+//    printf("%d\n", arr[x - 1][y - 1]);
+//    return 0;
+//}
+
+
+//int main()
+//{
+//    int n = 0;
+//    int m = 0;
+//    scanf("%d %d", &n, &m);
+//    int i = 0;
+//    int j = 0;
+//    int max = 0;
+//    int x = 0;
+//    int y = 0;
+//    for (i = 0; i < n; i++)
+//    {
+//        for (j = 0; j < m; j++)
+//        {
+//            int hi = 0;
+//            scanf("%d", &hi);
+//            if (hi > max)
+//            {
+//                x = i;
+//                y = j;
+//                max = hi;
+//            }
+//        }
+//    }
+//    printf("%d %d\n", x + 1, y + 1);
+//    return 0;
+//}
+
+//#include <stdio.h>
+//int main()
+//{
+//    int n = 0;
+//    int m = 0;
+//    scanf("%d%d", &n, &m);
+//    int a1[n][m];
+//    int a2[n][m];
+//    int i = 0;
+//    int j = 0;
+//    for (i = 0; i < n; i++)
+//    {
+//        for (j = 0; j < m; j++)
+//        {
+//            scanf("%d", &a1[i][j]);
+//        }
+//    }
+//    for (i = 0; i < n; i++)
+//    {
+//        for (j = 0; j < m; j++)
+//        {
+//            scanf("%d", &a2[i][j]);
+//        }
+//    }
+//    for (i = 0; i < n; i++)
+//    {
+//        for (j = 0; j < m; j++)
+//        {
+//            if (a1[i][j] != a2[i][j])
+//                break;
+//        }
+//    }
+//    if (i == n && j == m)
+//    {
+//        printf("Yes\n");
+//    }
+//    else
+//    {
+//        printf("No\n");
+//    }
+//    return 0;
+//}
