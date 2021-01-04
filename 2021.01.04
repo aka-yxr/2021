@@ -1,0 +1,206 @@
+//#include<stdio.h>
+//
+//struct stu {
+//    int sex, flag;
+//    char name[10];
+//};
+//int main()
+//{
+//    struct stu students[51], s1[51];
+//    int n;
+//    scanf_s("%d", &n);
+//    for (int i = 0; i < n; i++)
+//    {
+//        getchar();
+//        scanf_s("%d %s", &students[i].sex, students[i].name);
+//        students[i].flag = 0;
+//    }
+//    for (int i = 0; i < n / 2; i++)
+//    {
+//        for (int j = n - 1; j >= n / 2; j--)
+//        {
+//            if ((students[i].sex != students[j].sex) && students[i].flag == 0 && students[j].flag == 0)
+//            {
+//                students[i].flag = 1;
+//                students[j].flag = 1;
+//                printf("%s %s\n", students[i].name, students[j].name);
+//                break;
+//            }
+//        }
+//    }
+//    return 0;
+//}
+
+
+//#include<stdio.h>
+//
+//struct stu {
+//    char id[10];
+//    char name[10];
+//    int point;
+//};
+//int main()
+//{
+//    struct stu students[11];
+//    int n, i;
+//    double sum = 0;
+//    scanf_s("%d", &n);
+//    for (i = 0; i < n; i++)
+//    {
+//        scanf_s("%s %s %d", students[i].id, students[i].name, &students[i].point);
+//        sum = sum + students[i].point;
+//    }
+//    sum = sum * 1.0 / n;
+//    printf("%.2f\n", sum);
+//    for (i = 0; i < n; i++)
+//    {
+//        if (students[i].point < sum)
+//            printf("%s %s\n", students[i].name, students[i].id);
+//    }
+//    return 0;
+//}
+
+
+// 有理数加法 
+//#include<stdio.h>
+//
+////int huajian(int a,int b);
+//int main()
+//{
+//    int a1, b1, a2, b2;
+//    char ch, op;
+//    scanf_s("%d%c%d %d%c%d", &a1, &ch, &b1, &a2, &op, &b2);
+//    if (b1 != b2)
+//    {
+//        if (b1 > b2)
+//        {
+//            int tem1, tem2;
+//            tem1 = b1;
+//            b1 = b2;
+//            b2 = tem1;
+//            tem2 = a1;
+//            a1 = a2;
+//            a2 = tem2;
+//        }
+//        if (b2 % b1 == 0)//可约分
+//        {
+//            a1 = a1 * (b2 / b1);
+//            b1 = b2;
+//        }
+//        else//不可约分
+//        {
+//            int c = b1;
+//            b1 = b1 * b2;//分母
+//            a1 = a1 * b2;
+//            a2 = a2 * c;
+//        }
+//    }
+//    int fenmu = b1;
+//    int fenzi = a1 + a2;
+//    int num = b1 > (a1 + a2) ? b1 : (a1 + a2);
+//    for (int k = 2; k < num; k++)
+//    {
+//        if (fenmu % k == 0 && fenzi % k == 0)
+//        {
+//            fenmu = fenmu / k;
+//            fenzi = fenzi / k;
+//        }
+//    }
+//    if (fenzi % fenmu == 0)
+//        printf("%d", fenzi / fenmu);
+//    else if (fenmu % fenzi == 0)
+//        printf("1/%d", fenmu / fenzi);
+//    else
+//        printf("%d/%d", fenzi, fenmu);
+//
+//    /*
+//    if(fenmu/huajian(fenzi,fenmu)==1)
+//        printf("%d",fenzi/huajian(fenzi,fenmu));
+//   else
+//        printf("%d/%d",fenzi/huajian(fenzi,fenmu),fenmu/huajian(fenzi,fenmu));
+//    */
+//    return 0;
+//}
+//
+///*int huajian(int a,int b)//分子 分母
+//{
+//  if(a%b==0)
+//    return b;
+//  else
+//    return huajian(b,a%b);
+//}
+//*/
+
+
+//--Easy--
+//#include<stdio.h>
+//
+//int main()
+//{
+//    int m;
+//    scanf("%d", &m);
+//    if (m % 5 == 0)
+//        printf("YES\n");
+//    else
+//        printf("NO\n");
+//    return 0;
+//}
+
+//#include<stdio.h>
+//
+//int If(int n)
+//{
+//    if (n < 0)
+//        return 1;
+//    else if (n > 0)
+//        return -1;
+//    else
+//        return 0;
+//}
+//int main()
+//{
+//    int x;
+//    scanf_s("%d", &x);
+//    printf("%d", If(x));
+//    return 0;
+//}
+
+
+//#include<stdio.h>
+//
+//int main()
+//{
+//    int a[10];
+//    for (int i = 0; i < 10; i++)
+//    {
+//        scanf_s("%d ", &a[i]);
+//    }
+//    for (int k = 0; k < 10; k++)
+//    {
+//        printf("%d ", a[k]);
+//    }
+//    return 0;
+//}
+
+
+//#include<stdio.h>
+//int main()
+//{
+//    int x, count = 0;
+//    for (int i = 1; i <= 2019; i++)
+//    {
+//        int j = i;
+//        while (j)
+//        {
+//            x = j % 10;
+//            j /= 10;
+//            if (x == 9)
+//            {
+//                count++;
+//                break;
+//            }
+//        }
+//    }
+//    printf("%d", count);
+//    return 0;
+//}
