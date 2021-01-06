@@ -1,0 +1,201 @@
+//#include<stdio.h>
+//#include<string.h>
+//
+//int main()
+//{
+//    char ch[25][11], str[10], t[25];
+//    int n = 0;
+//    while (1)
+//    {
+//        gets(str);
+//        if (str[0] == '#')
+//            break;
+//        else
+//        {
+//            strcpy(ch[n], str);
+//            n++;
+//        }
+//    }
+//    for (int i = 0; i < n - 1; i++)
+//    {
+//        for (int j = 0; j < n - i - 1; j++)
+//        {
+//            if (strlen(ch[j]) > strlen(ch[j + 1]))
+//            {
+//                //交换
+//                strcpy(t, ch[j]);
+//                strcpy(ch[j], ch[j + 1]);
+//                strcpy(ch[j + 1], t);
+//            }
+//        }
+//    }
+//    for (int i = 0; i < n; i++)
+//    {
+//        printf("%s ", ch[i]);
+//    }
+//    return 0;
+//}
+
+
+//#include<stdio.h>
+//
+//struct stu {
+//    char id[20];
+//    char name[20];
+//    int a, b, c;
+//    int sum;
+//};
+//int main()
+//{
+//    struct stu students[10];
+//    int n;
+//    scanf("%d", &n);
+//    for (int i = 0; i < n; i++)
+//    {
+//        scanf("%s %s %d %d %d", students[i].id, students[i].name, &students[i].a, &students[i].b, &students[i].c);
+//        students[i].sum = 0;
+//    }
+//    for (int i = 0; i < n; i++)
+//    {
+//        students[i].sum = students[i].a + students[i].b + students[i].c;
+//    }
+//    int max = students[0].sum;
+//    int k = 0;
+//    for (int i = 1; i < n; i++)
+//    {
+//        if (max < students[i].sum)
+//        {
+//            max = students[i].sum;
+//            k = i;
+//        }
+//    }
+//    printf("%s %s %d\n", students[k].name, students[k].id, max);
+//    return 0;
+//}
+
+
+//#include<stdio.h>
+//#include<string.h>
+//
+//int main()
+//{
+//    int n;
+//    char ch[999][80];
+//    scanf("%d", &n);
+//    for (int i = 0; i < n; i++)
+//        scanf("%s", ch[i]);
+//    int b[999] = { 0 };
+//    for (int i = 0; i < n; i++)
+//    {
+//        b[i] = strlen(ch[i]);
+//    }
+//    int max = b[0], k = 0;
+//    for (int i = 1; i < n; i++)
+//        if (max < b[i])
+//        {
+//            max = b[i];
+//            k = i;
+//        }
+//    printf("The longest is: %s", ch[k]);
+//    return 0;
+//}
+
+
+//#include <stdio.h>
+
+//int main()
+//{
+//    int n;
+//    int ch[10] = { 0 };
+//    scanf("%d", &n);
+//    for (int i = 0; i < n; i++)
+//    {
+//        int num;
+//        scanf("%d ", &num);
+//        while (num > 0)
+//        {
+//            ch[num % 10]++;
+//            num = num / 10;
+//        }
+//    }
+//    int max = 0;
+//    for (int i = 0; i < 10; i++)
+//        if (max < ch[i])
+//            max = ch[i];
+//
+//    printf("%d:", max);
+//
+//    for (int i = 0; i < 10; i++)
+//        if (max == ch[i])
+//            printf(" %d", i);
+//    printf("\n");
+//    return 0;
+//}
+
+
+//#include<stdio.h>
+//
+//void Print(int n)
+//{
+//    int i, j;
+//    for (i = 1; i <= n; i++)
+//    {
+//        for (j = 1; j <= i; j++)
+//            printf("%d*%d=%-4d", j, i, j * i);
+//        printf("\n");
+//    }
+//}
+//
+//int main()
+//{
+//    int n;
+//    scanf("%d", &n);
+//    Print(n);
+//    return 0;
+//}
+
+
+//#include<stdio.h>
+//
+//int main()
+//{
+//    int a[10], n;
+//    scanf("%d", &n);
+//    for (int i = 0; i < n; i++)
+//    {
+//        scanf("%d", &a[i]);
+//    }
+//    for (int i = n - 1; i > 0; i--)
+//        printf("%d ", a[i]);
+//
+//    printf("%d", a[0]);
+//    return 0;
+//}
+
+
+//#include<stdio.h>
+//
+//int Fact(int a)
+//{
+//    int num = 1;
+//    for (int j = 1; j <= a; j++)
+//    {
+//        num = num * j;
+//    }
+//    return num;
+//}
+//int Sum(int x)
+//{
+//    int sum = 0;
+//    for (int i = 1; i <= x; i++)
+//        sum = sum + Fact(i);
+//    return sum;
+//}
+//
+//int main()
+//{
+//    int n;
+//    scanf("%d", &n);
+//    printf("%d", Sum(n));
+//    return 0;
+//}
