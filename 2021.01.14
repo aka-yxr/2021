@@ -1,0 +1,125 @@
+//#include<stdio.h>
+//#include<string.h>
+//
+//int main()
+//{
+//    int n, p = 0, t = 0, a = 0, k = 0, other = 0;
+//    scanf_s("%d", &n);
+//   // getchar();
+//    char ch[101] = { 0 };
+//    int pp, tt;    //定位P和T的位置来计算A的数量.
+//    for (int i = 0; i < n; i++)
+//    {
+//        p = 0;
+//        t = 0;
+//        a = 0;
+//        k = 0;
+//        other = 0;
+//        gets(ch);
+//        //   int x=strlen(ch);
+//        for (int j = 0; ch[j] != '\0'; j++)
+//        {
+//            switch (ch[j])
+//            {
+//            case 'P':p++; pp = j; break;
+//            case 'A':a++; break;
+//            case 'T':t++; tt = j; break;
+//            case ' ':k++; break;
+//            default:other++; break;
+//            }
+//        }
+//        if (p == 1 && t == 1 && (a > 0 && k == 0 && other == 0 && ((tt - pp - 1) * pp == a - tt + 1)))
+//            printf("YES\n");
+//        else
+//            printf("NO\n");
+//    }
+//    return 0;
+//}
+
+
+//#include<stdio.h>
+//
+//struct stu {
+//    char name[11];
+//    char id[11];
+//    int point;
+//};
+//
+//int main()
+//{
+//    struct stu s[999];
+//    int n;
+//    scanf("%d", &n);
+//    for (int i = 0; i < n; i++)
+//        scanf("%s %s %d", s[i].name, s[i].id, &s[i].point);
+//    int max, min, m = 0, x = 0;
+//    max = min = s[0].point;
+//    for (int i = 1; i < n; i++)
+//    {
+//        if (max < s[i].point)
+//        {
+//            max = s[i].point;
+//            m = i;
+//        }
+//        if (min > s[i].point)
+//        {
+//            min = s[i].point;
+//            x = i;
+//        }
+//    }
+//    printf("%s %s\n", s[m].name, s[m].id);
+//    printf("%s %s\n", s[x].name, s[x].id);
+//    return 0;
+//}
+
+
+//#include<stdio.h>
+//
+//int main()
+//{
+//    int n;
+//    double a, b, c;
+//    scanf("%d", &n);
+//    for (int i = 1; i <= n; i++)
+//    {
+//        scanf("%lf %lf %lf", &a, &b, &c);
+//        //用三目操作符 来计算a+b > c，是否成立，成立x=1，不成立x=0；
+//        int x = (a + b) > c ? 1 : 0;
+//        if (x == 1)
+//            printf("Case #%d: true\n", i);
+//        else if (x == 0)
+//            printf("Case #%d: false\n", i);
+//    }
+//    return 0;
+//}
+
+#include <iostream>
+using namespace std;
+class TDate
+{
+private:
+    int Year;
+    int Month;
+    int Day;
+public:
+    TDate(int year=0, int month=0, int day = 0)
+   {
+        Year = year;
+        Month = month;
+        Day = day;
+   }
+    void Print()
+   {
+        cout<<Day<<"/"<<Month<<"/"<<Year<<endl;
+   }
+};
+int main()
+{
+    int year = 0;
+    int month = 0;
+    int day = 0;
+    cin>>year>>month>>day;
+    TDate d(year, month, day);
+    d.Print();
+    return 0;
+}
