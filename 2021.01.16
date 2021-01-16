@@ -1,0 +1,199 @@
+//#include<stdio.h>
+//
+//void time(int n)
+//{
+//    if (n % 100 >= 50)//不足 1 秒的 四舍五入操作
+//        n = n / 100 + 1;
+//    else
+//        n = n / 100;
+//
+//    printf("%02d:%02d:%02d\n", n / 3600, n % 3600 / 60, n % 60);
+//
+//}
+//
+//int main()
+//{
+//    int c1, c2;
+//    scanf("%d %d", &c1, &c2);
+//    int n = c2 - c1;
+//    time(n);
+//
+//    return 0;
+//}
+
+//#include<stdio.h>
+//
+//int main()
+//{
+//
+//    int n, jiahua, jiahan, yihua, yihan;
+//    int jia = 0, yi = 0;//甲乙喝酒的杯数。
+//
+//    scanf("%d", &n);
+//
+//    for (int i = 0; i < n; i++)
+//    {
+//        scanf("%d %d %d %d", &jiahan, &jiahua, &yihan, &yihua);
+//
+//        if (jiahan + yihan == jiahua && jiahan + yihan != yihua)//甲胜，乙负，乙喝酒。
+//            yi++;
+//        if (jiahan + yihan == yihua && jiahan + yihan != jiahua)//乙胜，甲负，甲喝酒。
+//            jia++;
+//    }
+//
+//    printf("%d %d\n", jia, yi);
+//
+//    return 0;
+//}
+
+//#include<stdio.h>
+//
+//void test1(int a[], int n)
+//{
+//    int sum = 0, A1 = 0;
+//    for (int i = 0; i < n; i++)
+//    {
+//        if (a[i] % 5 == 0 && a[i] % 2 == 0)
+//        {
+//            sum = sum + a[i];
+//            A1 = 1;
+//        }
+//    }
+//    if (A1)
+//        printf("%d ", A1);
+//    else
+//        printf("N ");
+//}
+//
+//void test2(int a[], int n)
+//{
+//    int sum = 0, k = 1, A2 = 0;
+//    for (int i = 0; i < n; i++)
+//    {
+//        if (a[i] % 5 == 1)
+//        {
+//            sum = sum + k * a[i];
+//            k = -k;
+//            A2 = 1;
+//        }
+//    }
+//    if (A2)
+//        printf("%d ", A2);
+//    else
+//        printf("N ");
+//}
+//
+//void test3(int a[], int n)
+//{
+//    int count = 0, A3 = 0;
+//    for (int i = 0; i < n; i++)
+//    {
+//        if (a[i] % 5 == 2)
+//        {
+//            count++;
+//            A3 = 1;
+//        }
+//    }
+//    if (A3)
+//        printf("%d ", A3);
+//    else
+//        printf("N ");
+//}
+//
+//void test4(int a[], int n)
+//{
+//    int sum = 0;
+//    int count = 0, A4 = 0;
+//    for (int i = 0; i < n; i++)
+//    {
+//        if (a[i] % 5 == 3)
+//        {
+//            sum = sum + a[i];
+//            count++;
+//            A4 = 1;
+//        }
+//    }
+//    if (A4)
+//        printf("%.1f ", sum * 1.0 / count);
+//    else
+//        printf("N ");
+//}
+//
+//void test5(int a[], int n)
+//{
+//    int t[99] = { 0 }, j = 0, A5 = 0;
+//    for (int i = 0; i < n; i++)
+//    {
+//        if (a[i] % 5 == 4)
+//        {
+//            t[j] = a[i];
+//            j++;
+//            A5 = 1;
+//        }
+//    }
+//    int max = t[0];
+//    for (int i = 1; i < j; i++)
+//    {
+//        if (max < t[i])
+//            max = t[i];
+//    }
+//    if (A5)
+//        printf("%d", A5);
+//    else
+//        printf("N");
+//}
+//
+//int main()
+//{
+//    int n, a[1000];
+//    scanf_s("%d ", &n);
+//
+//    for (int i = 0; i < n; i++)
+//        scanf_s("%d ", &a[i]);
+//
+//    test1(a, n);
+//    test2(a, n);
+//    test3(a, n);
+//    test4(a, n);
+//    test5(a, n);
+//
+//    printf("\n");
+//    return 0;
+//}
+
+//#include<stdio.h>
+//
+//void become(int a[], int n, int m)
+//{
+//    int temp;
+//    int i, j;
+//    for (i = 0; i < m; i++)
+//    {
+//        temp = a[n - 1];
+//        for (j = n - 1; j > 0; j--)
+//        {
+//            a[j] = a[j - 1];
+//            
+//        }
+//        a[0] = temp;
+//    }
+//    //1 2 3 4 5 6
+//    //6 1 2 3 4 5
+//    for (i = 0; i < n - 1; i++)
+//    {
+//        printf("%d ", a[i]);
+//    }
+//    printf("%d", a[i]);
+//}
+//
+//int main()
+//{
+//    int n, m;
+//    scanf_s("%d %d", &n, &m);
+//    int a[101];
+//    for (int i = 0; i < n; i++)
+//        scanf_s("%d ", &a[i]);
+//
+//    become(a, n, m);
+//    return 0;
+//}
