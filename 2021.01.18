@@ -1,0 +1,213 @@
+//#include<stdio.h>
+//int main()
+//{
+//	int n, i, x = 0, flag = 0;
+//	scanf_s("%d", &n);
+//	for (i = 1;; i++)
+//	{
+//		x = x * 10 + 1;
+//		if (x >= n)
+//		{
+//			flag = 1;
+//			printf("%d", x / n);
+//		}
+//		else if (flag == 1)
+//			printf("0");
+//		x = x % n;
+//		if (x == 0)
+//			break;
+//	}
+//	printf(" %d", i);
+//	return 0;
+//}
+
+
+//#include<stdio.h>
+//
+//int main()
+//{
+//    int x, a, count = 0;
+//    scanf_s("%d", &x);
+//    int i = 1, flag = 1, n;
+//    for (i = 1;; i++)
+//    {
+//        n = x * i;
+//        count = 0;
+//        do
+//        {
+//            a = n % 10;
+//            if (a != 1)
+//            {
+//                flag = 0;
+//                break;
+//            }
+//            else
+//            {
+//                count++;
+//                flag = 1;
+//            }
+//            n = n / 10;
+//        } while (n > 0);
+//
+//        if (flag == 1)
+//            break;
+//    }
+//    printf("%d %d", i, count);
+//    return 0;
+//}
+
+//#include<stdio.h>
+//int main()
+//{
+//    int i, j, m, n, sum = 0, s[4][4];
+//    for (i = 0; i < 3; i++)
+//    {
+//        for (j = 0; j < 3; j++)
+//        {
+//            scanf("%d ", &s[i][j]);
+//            if (s[i][j] == 0)
+//            {
+//                m = i; n = j;
+//            }
+//            sum = sum + s[i][j];
+//        }
+//        scanf("\n");
+//    }
+//    s[m][n] = 45 - sum;
+//    int a, b, c, d, e, f, x;
+//    scanf("%d %d\n%d %d\n%d %d\n%d", &a, &b, &c, &d, &e, &f, &x);
+//    printf("%d\n%d\n%d\n", s[a - 1][b - 1], s[c - 1][d - 1], s[e - 1][f - 1]);
+//    if (x == 1)
+//
+//        sum = s[0][0] + s[0][1] + s[0][2];
+//
+//    else if (x == 2)
+//
+//        sum = s[1][0] + s[1][1] + s[1][2];
+//
+//    else if (x == 3)
+//
+//        sum = s[2][0] + s[2][1] + s[2][2];
+//
+//    else if (x == 4)
+//
+//        sum = s[0][0] + s[1][0] + s[2][0];
+//
+//    else if (x == 5)
+//
+//        sum = s[0][1] + s[1][1] + s[2][1];
+//
+//    else if (x == 6)
+//
+//        sum = s[0][2] + s[1][2] + s[2][2];
+//
+//    else if (x == 7)
+//
+//        sum = s[0][0] + s[1][1] + s[2][2];
+//
+//    else if (x == 8)
+//
+//        sum = s[0][2] + s[1][1] + s[2][0];
+//    if (sum == 6)
+//        printf("10000");
+//    else if (sum == 7)
+//        printf("36");
+//    else if (sum == 8)
+//        printf("720");
+//    else if (sum == 9)
+//        printf("360");
+//    else if (sum == 10)
+//        printf("80");
+//    else if (sum == 11)
+//        printf("252");
+//    else if (sum == 12)
+//        printf("108");
+//    else if (sum == 13)
+//        printf("72");
+//    else if (sum == 14)
+//        printf("54");
+//    else if (sum == 15)
+//        printf("180");
+//    else if (sum == 16)
+//        printf("72");
+//    else if (sum == 17)
+//        printf("180");
+//    else if (sum == 18)
+//        printf("119");
+//    else if (sum == 19)
+//        printf("36");
+//    else if (sum == 20)
+//        printf("306");
+//    else if (sum == 21)
+//        printf("1080");
+//    else if (sum == 22)
+//        printf("144");
+//    else if (sum == 23)
+//        printf("1800");
+//    else if (sum == 24)
+//        printf("3600");
+//}
+
+
+//#include<stdio.h>
+//
+//int main()
+//{
+//    int a[3][3] = { 0 }, b[3] = { 0 }, sum = 0;
+//    int i, j, x, y, f;//f--方向;
+//    int n;
+//    for (i = 0; i < 3; i++)
+//        for (j = 0; j < 3; j++)
+//        {
+//            scanf("%d ", &a[i][j]);//0 表示的是这个位置上的数字初始时就能看见了
+//            n = n + a[i][j];
+//        }
+//    for (i = 0; i < n; i++)
+//        for (j = 0; j < 3; j++)
+//        {
+//            if (a[i][j] == 0)
+//                a[i][j] = 45 - n;
+//        }
+//    for (i = 0; i < 3; i++)
+//    {
+//        scanf("%d %d", &x, &y);
+//        b[i] = a[x - 1][y - 1];
+//        printf("%d\n", b[i]);
+//    }
+//    scanf("%d", &f);
+//    switch (f)
+//    {
+//    case 1:sum = a[0][0] + a[0][1] + a[0][2]; break;
+//    case 2:sum = a[1][0] + a[1][1] + a[1][2]; break;
+//    case 3:sum = a[2][0] + a[2][1] + a[2][2]; break;
+//    case 4:sum = a[0][0] + a[1][0] + a[2][0]; break;
+//    case 5:sum = a[0][1] + a[1][1] + a[2][1]; break;
+//    case 6:sum = a[0][2] + a[1][2] + a[2][2]; break;
+//    case 7:sum = a[0][0] + a[1][1] + a[2][2]; break;
+//    case 8:sum = a[2][0] + a[1][1] + a[0][2]; break;
+//    default:break;
+//    }
+//    switch (sum)
+//    {
+//    case  6:printf("10000\n"); break;
+//    case  7:printf("36\n"); break;
+//    case  8:printf("720\n"); break;
+//    case  9:printf("360\n"); break;
+//    case 10:printf("80\n"); break;
+//    case 11:printf("252\n"); break;
+//    case 12:printf("108\n"); break;
+//    case 13:printf("72\n"); break;
+//    case 14:printf("54\n"); break;
+//    case 15:printf("180\n"); break;
+//    case 16:printf("72\n"); break;
+//    case 17:printf("180\n"); break;
+//    case 18:printf("119\n"); break;
+//    case 19:printf("36\n"); break;
+//    case 20:printf("306\n"); break;
+//    case 21:printf("1080\n"); break;
+//    case 22:printf("144\n"); break;
+//    case 23:printf("1800\n"); break;
+//    case 24:printf("3600\n"); break;
+//    }
+//    return 0;
+//}
