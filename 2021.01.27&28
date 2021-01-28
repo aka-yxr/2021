@@ -1,0 +1,306 @@
+//#include<stdio.h>
+//
+//int main()
+//{
+//    int n, i = 0;
+//    int b[1000];
+//    scanf("%d", &n);
+//    int a = 0;
+//    do {
+//        a = n % 6;
+//        b[i] = a;
+//        n = n / 6;
+//        i++;
+//    } while (n > 0);
+//    for (int j = i - 1; j >= 0; j--)
+//        printf("%d", b[j]);
+//    return 0;
+//}
+
+
+//#include<stdio.h>
+//
+//long int Sum(int n)
+//{
+//    long int sum = 0;
+//    for (int i = 1; i <= n; i++)
+//        sum += i;
+//    return sum;
+//}
+//int main()
+//{
+//    long int n;
+//    scanf("%ld", &n);
+//    printf("%ld", Sum(n));
+//    return 0;
+//}
+
+//#include<stdio.h>
+//
+//int main()
+//{
+//    int hour, min;
+//    long int k;
+//
+//    scanf("%d:%d %ld", &hour, &min, &k);
+//    int m = min + k;
+//    int h = hour + m / 60;
+//
+//    printf("%02ld:%02ld", h % 24, m % 60);
+//
+//    return 0;
+//}
+
+//#include<stdio.h>
+//
+//int main()
+//{
+//    int n;
+//    scanf("%d", &n);
+//    int min = (n / 12) * 4 + 2;
+//    printf("%d", min);
+//    return 0;
+//}
+
+
+//#include<stdio.h>
+//
+//int main()
+//{
+//    long int n, m;
+//    scanf("%ld %ld", &n, &m);
+//    long int i, k = 0, min;
+//    min = n > m ? m : n;
+//    for (i = min; i > 0; i--)
+//    {
+//        if (m % i == 0 && n % i == 0)
+//        {
+//            k = i;
+//            break;
+//        }
+//    }
+//    min = n * m / k;
+//
+//    printf("%ld\n", min + k);
+//    return 0;
+//}
+
+
+//#include<stdio.h>
+//
+//int main()
+//{
+//    long int n, a, i = 0;
+//    scanf("%ld", &n);
+//    int k[n], flag = 0;
+//    do {
+//        a = n % 10;
+//        if (a % 2 == 1)
+//        {
+//            k[i] = 1;
+//            i++;
+//        }
+//        else
+//        {
+//            k[i] = 0;
+//            i++;
+//            flag++;
+//        }
+//        n = n / 10;
+//    } while (n > 0);
+//    int bug = 0;
+//    if (flag == i)
+//        printf("0");
+//    else
+//    {
+//        for (int j = i - 1; j >= 0; j--)
+//        {
+//            if (k[j] == 1)
+//            {
+//                printf("%d", k[j]);
+//                bug = 1;
+//            }
+//            else if (k[i] == 0 && bug == 1)
+//                printf("%d", k[i]);
+//        }
+//    }
+//
+//    return 0;
+//}
+
+
+//#include<stdio.h>
+//
+//int main()
+//{
+//    int n, i;
+//    scanf_s("%d", &n);
+//    int a[31];
+//    a[0] = 1;//n=1
+//    a[1] = 2;//n=2
+//    a[2] = 3;//n=3
+//    for (i = 3; i < n; i++)
+//        a[i] = a[i - 2] + a[i - 1];
+//    printf("%d\n", a[n - 1]);
+//    return 0;
+//}
+
+
+//#include<stdio.h>
+//
+//int main()
+//{
+//    int n, i, num;
+//    scanf("%d", &n);
+//    int a[100001] = { 0 };
+//    for (i = 0; i < n; i++)
+//    {
+//        scanf("%d", &num);
+//        a[num]++;
+//    }
+//    for (i = 0; i < 100001; i++)
+//        if (a[i] != 0)
+//            printf("%d ", i);
+//    return 0;
+//}
+
+
+//#include<stdio.h>
+//#include<string.h>
+//
+//int main()
+//{
+//    char ch[8001];
+//    gets(ch);
+//    long int i, c = 0, h = 0, n = 0;
+//    for (i = 0; ch[i] != 0; i++)
+//    {
+//        if (ch[i] == 'C')
+//            c++;
+//        else if (ch[i] == 'H')
+//            h = h + c;
+//        else if (ch[i] == 'N')
+//            n = n + h;
+//    }
+//    printf("%ld\n", n);
+//    return 0;
+//}
+
+//#include<stdio.h>
+//
+//int main()
+//{
+//	printf("%c", 7);
+//	return 0;
+//}
+
+//#include<stdio.h>
+//#include<stdlib.h>
+//
+//void chai(int n, int num[])
+//{
+//    for (int i = 0; i < 4; i++)
+//    {
+//        num[i] = n % 10;
+//        n = n / 10;
+//    }
+//}
+//
+//int cmp(const void* a, const void* b)
+//{
+//    int* c = (int*)a;
+//    int* d = (int*)b;
+//    return *c - *d;
+//}
+//
+//
+//int Max(int num[])
+//{
+//    int sum = 0;
+//    for (int i = 0; i < 4; i++)
+//        sum = sum * 10 + num[i];
+//    return sum;
+//}
+//
+//int Min(int num[])
+//{
+//    int sum = 0;
+//    for (int i = 3; i >= 0; i++)
+//        sum = sum * 10 + num[i];
+//    return sum;
+//}
+//
+//int main()
+//{
+//    int n, max, min;
+//    int num[9];
+//    scanf("%d", &n);
+//    while (1)
+//    {
+//        chai(n, num);
+//        qsort(num, 4, sizeof(num[0]), cmp);//大到小排序
+//        max = Max(num);//前者
+//        min = Min(num);//后者
+//        n = max - min;
+//        printf("%d - %d = %4d", max, min, n);
+//        if (n == 0 || n == 6174)
+//            break;
+//    }
+//    return 0;
+//}
+
+
+//#include<stdio.h>
+//#include<stdlib.h>
+//
+//int num[4] = { 0 };
+//void chai(int n, int num[])
+//{
+//    for (int i = 0; i < 4; i++)
+//    {
+//        num[i] = n % 10;
+//        n = n / 10;
+//    }
+//}
+//
+//int cmp1(const void* a, const void* b)
+//{
+//    int* c = (int*)a;
+//    int* d = (int*)b;
+//    return *c - *d;
+//}
+//
+//int cmp2(const void* a, const void* b)
+//{
+//    int* c = (int*)a;
+//    int* d = (int*)b;
+//    return *d - *c;
+//}
+//
+//int Tonumber(int num[])
+//{
+//    int sum = 0;
+//    for (int i = 0; i < 4; i++)
+//        sum = sum * 10 + num[i];
+//    return sum;
+//}
+//
+//
+//int main()
+//{
+//    int n, max, min;
+//    scanf_s("%d", &n);
+//    while (1)
+//    {
+//        chai(n, num);
+//        qsort(num, 4, sizeof(num[0]), cmp1);//小到大排序
+//        max = Tonumber(num);//前者
+//        qsort(num, 4, sizeof(num[0]), cmp2);//小到大排序
+//        min = Tonumber(num);//后者
+//        n = max - min;
+//        printf("%04d - %04d = %4d\n", max, min, n);
+//        if (n == 0 || n == 6174)
+//            break;
+//    }
+//    return 0;
+//}
