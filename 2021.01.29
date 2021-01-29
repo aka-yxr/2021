@@ -1,0 +1,176 @@
+//#include<stdio.h>
+//
+//int main()
+//{
+//	int x = 5342;
+//	int* p = NULL;
+//	p = &x;
+//	printf("If I know the name of the variable,I can get it's value by name:%d\n", x);
+//	printf("If I know the address of the variable is :%x,then I also can get it's value by name:%d\n", p, *p);
+//
+//	return 0;
+//}
+
+//#include<stdio.h>
+//
+//void month_day(int year, int yearday, int* pmonth, int* pday)
+//{
+//	int k, leap;
+//	int tab[2][13] = { {0,31,28,31,30,31,30,31,31,30,31,30,31},{0,31,29,31,30,31,30,31,31,30,31,30,31}, };
+//
+//	leap = ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0);
+//	for (k = 1; yearday > tab[leap][k]; k++)
+//		yearday -= tab[leap][k];
+//	*pmonth = k;
+//	*pday = yearday;
+//}
+//
+//int main()
+//
+//{
+//	int day, month, year, yearday;
+//	scanf_s("%d %d", &year, &yearday);
+//
+//	month_day(year, yearday, &month, &day);
+//	printf("%d-%02d-%02d\n", year, month, day);
+//
+//	return 0;
+//}
+
+
+//冒泡
+//#include<stdio.h>
+//
+//void swap(int* px, int* py)
+//{
+//	int t;
+//	t = *px;
+//	*px = *py;
+//	*py = t;
+//}
+//
+//void bubble(int a[], int n)
+//{
+//	int i, j, t;
+//	for (i = 1; i < n; i++)
+//	{
+//		for (j = 0; j < n - i; j++)
+//		{
+//			if (a[j] > a[j + 1])
+//				swap(&a[j], &a[j + 1]);
+//		}
+//	}
+//}
+//int main()
+//{
+//	int n, a[10];
+//	int i;
+//
+//	scanf_s("%d", &n);
+//	for (i = 0; i < n; i++)
+//		scanf_s("%d ", &a[i]);
+//
+//	bubble(a, n);
+//
+//	for (i = 0; i < n; i++)
+//		printf("%d ", a[i]);
+//	return 0;
+//}
+
+
+//#include<stdio.h>
+//
+//int main()
+//{
+//	int i, n, a[10], * p;
+//	long sum = 0;
+//
+//	scanf_s("%d ", &n);
+//	for (i = 0; i < n; i++)
+//		scanf_s("%d ", &a[i]);
+//	for (i = 0; i < n; i++)
+//		sum = sum + *(a + i);
+//
+//	printf("frist sum=%ld\n", sum);
+//
+//	sum = 0;
+//	for (p = a; p < a + n; p++)
+//		sum = sum + *p;
+//
+//	printf("last sum=%ld\n", sum);
+//
+//	return 0;
+//}
+
+
+//#include<stdio.h>
+//
+//int main()
+//{
+//	double a[2], * p, * q;
+//
+//	p = &a[0];
+//	q = p + 1;
+//
+//	printf("%d\n", q - p);
+//	printf("%d\n", (int)q - (int)p);
+//
+//	return 0;
+//}
+
+
+//字符串压缩
+//#include<stdio.h>
+//
+//void zip(char* p);
+//
+//int main()
+//{
+//	char line[80];
+//	gets(line);
+//	zip(line);
+//	puts(line);
+//
+//	return 0;
+//}
+//
+//void zip(char* p)
+//{
+//	char* q = p;
+//	int n;
+//	while (*p != '\0')
+//	{
+//		n = 1;
+//		while (*p == *(p + n))
+//		{
+//			n++;
+//		}
+//		if (n >= 10)
+//		{
+//			*q++ = (n / 10) + '0';
+//			*q++ = (n % 10) + '0';
+//		}
+//		else if (n >= 2)
+//		{
+//			*q++ = n + '0';
+//		}
+//		*q++ = *(p + n - 1);
+//		p = p + n;
+//	}
+//	*q = '0';
+//}
+
+//#include<stdio.h>
+//int main()
+//{
+//    int a, b, c, sum;
+//
+//    scanf("%d %d %d", &a, &b, &c);
+//
+//    sum = a > b ? a : b;
+//    sum = c > sum ? c : sum;
+//
+//    printf("%d", sum);
+//
+//    return 0;
+//}
