@@ -1,0 +1,181 @@
+//#include <stdio.h>
+//#include <stdlib.h>
+//struct Node
+//{
+//	int data;
+//	struct Node* next;
+//};
+//int main()
+//{
+//	int n = 0;
+//	struct Node* list = NULL;
+//	struct Node* tail = NULL;
+//	//输入结点
+//	int i = 0;
+//	scanf("%d", &n);
+//	for (i = 0; i < n; i++)
+//	{
+//		int data = 0;
+//		scanf("%d", &data);
+//		struct Node* n = (struct Node*)malloc(sizeof(struct Node));
+//		n->data = data;
+//		n->next = NULL;
+//		if (list == NULL)
+//		{
+//			list = n;
+//			tail = list;
+//		}
+//		else
+//		{
+//			tail->next = n;
+//			tail = tail->next;
+//		}
+//	}
+//	//删除结点
+//	int del = 0;
+//	scanf("%d", &del);
+//	struct Node* cur = list;
+//	struct Node* prev = NULL;
+//	while (cur)
+//	{
+//		//找到了
+//		if (cur->data == del)
+//		{
+//			struct Node* pd = cur;
+//			//如果删除的是第一个结点
+//			if (cur == list)
+//			{
+//				list = list->next;
+//				cur = list;
+//			}
+//			else
+//			{
+//				//删除的不是第一个结点
+//				prev->next = cur->next;
+//				cur = prev->next;
+//			}
+//			n--;
+//			free(pd);
+//		}
+//		else//找不到
+//		{
+//			prev = cur;
+//			cur = cur->next;
+//		}
+//	}
+//	cur = list;
+//	printf("%d\n", n);
+//	while (cur)
+//	{
+//		printf("%d ", cur->data);
+//		cur = cur->next;
+//	}
+//	//释放空间
+//	cur = list;
+//	while (cur)
+//	{
+//		del = cur;
+//		cur = cur->next;
+//		free(del);
+//	}
+//	return 0;
+//}
+
+
+//#include <iostream>
+//using namespace std;
+//class TDate
+//{
+//private:
+//    int Year;
+//    int Month;
+//    int Day;
+//public:
+//    TDate(int year = 0, int month = 0, int day = 0)
+//    {
+//        Year = year;
+//        Month = month;
+//        Day = day;
+//    }
+//    void Print()
+//    {
+//        cout << Day << "/" << Month << "/" << Year << endl;
+//    }
+//};
+//int main()
+//{
+//    int year = 0;
+//    int month = 0;
+//    int day = 0;
+//    cin >> year >> month >> day;
+//    TDate d(year, month, day);
+//    d.Print();
+//    return 0;
+//}
+
+//#include<stdio.h>
+//
+//struct student {
+//	int num;
+//	char name[10];
+//	int computer, english, math;
+//	double average;
+//
+//};
+//
+//int update(struct student* p, int n, int num, int course, int score)
+//{
+//	int i, pos;
+//	for (i = 0; i < n; i++,p++)
+//	{
+//		if (p->num == num)
+//			break;
+//		if (i < n)
+//		{
+//			switch (course)
+//			{
+//			case 1:p->math = score; break;
+//			case 2:p->english = score; break;
+//			case 3:p->computer = score; break;
+//			}
+//			pos = i;
+//		}
+//		else
+//			pos = -1;
+//
+//	}
+//
+//}
+//
+//int main()
+//{
+//
+//	int course, i, n, num, pos, score;
+//	struct student s[50];
+//
+//	scanf_s("%d", &n);
+//	for (i = 0; i < n; i++)
+//	{
+//		scanf_s("%d", &s[i].num);
+//		scanf_s("%s", s[i].name);
+//		scanf_s("%d", &s[i].math);
+//		scanf_s("%d", &s[i].english);
+//		scanf_s("%d", &s[i].computer);
+//	}
+//	scanf_s("%d", &num);
+//	scanf_s("%d", &course);
+//	scanf_s("%d", &score);
+//
+//	pos = update(s, n, num, course, score);
+//
+//	if (pos == -1)
+//		printf("Not found !\n");
+//	else
+//	{
+//		printf("After update:\n");
+//		printf("num\t math\t english\t computer\n");
+//		printf("%d\t %d\t %d\t %d\n", s[pos].num, s[pos].math, s[pos].english, s[pos].computer);
+//	}
+//
+//	return 0;
+//}
