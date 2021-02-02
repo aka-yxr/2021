@@ -1,0 +1,204 @@
+//#include<stdio.h>
+//#define MAXN 100
+//int Count = 0;
+//
+//void intput1(int a[])//输入函数
+//{
+//	printf("Input the number of array elements:");
+//	scanf_s("%d", &Count);
+//	printf("Input an ordered array element:");
+//	for (int i = 0; i < Count; i++)
+//		scanf_s("%d", &a[i]);
+//
+//}
+//
+//void select(int a[], int option, int value)//控制函数
+//{
+//	switch (option)
+//	{
+//	case 1:insert1(a, value); break;//插入函数
+//	case 2:remove1(a, value); break;//删除函数
+//	case 3:query1(a, value); break;//查询函数
+//	}
+//
+//}
+//
+////插入函数
+//void insert1(int a[], int value)
+//{
+//	int i, j;
+//	for (i = 0; i < Count; i++)
+//	{
+//		if (value < a[i])
+//			break;
+//	}
+//	for (j = Count - 1; j >= i; j--)
+//		a[j + 1] = a[j];
+//	a[i] = value;
+//	Count++;
+//	Printf(a);
+//
+//}
+//
+////删除函数
+//void remove1(int a[], int value)
+//{
+//	int i, index = -1;
+//	for(i=0;i<Count;i++)
+//		if (value == a[i])
+//		{
+//			index = 1;
+//			break;
+//		}
+//	if (index == -1)
+//		printf("Failed to find the data,deletion failed.");
+//	else
+//	{
+//		for (i = index; i < Count - 1; i++)
+//			a[i] = a[i + 1];
+//	}
+//	Count--;
+//	Printf(a);
+//
+//}
+//
+//void query1(int a[], int value)
+//{
+//	int mid, left = 0, right = Count - 1;
+//	while (left <= right)
+//	{
+//		mid = (left + right) / 2;
+//		if (a[mid] == value)
+//		{
+//			printf("The index is:%d", mid);
+//			return;
+//		}
+//		else if (value < a[mid])
+//			left = mid - 1;
+//		else
+//			right = mid + 1;
+//	}
+//	printf("This element does not exist.");
+//
+//}
+//
+//void Printf(int a[])//输出函数
+//{
+//	printf("The ordered array a is:");
+//	for (int i = 0; i < Count; i++)
+//	{
+//		if (i == 0)
+//			printf("%d", a[i]);
+//		else
+//			printf("%d", a[i]);
+//	}
+//
+//}
+//
+//int main()
+//{
+//	int option, value, a[MAXN];
+//
+//	input1(a);//调用函数输入a
+//	
+//	printf("[1] Insert \n");//显示菜单
+//	printf("[2] Delete \n");
+//	printf("[3] Query \n");
+//	printf("[Other option] End \n");
+//	while (1)     //循环
+//	{
+//		printf("Input option:");//提示输入编号
+//		scanf_s("%d", &option);
+//		if (option < 1 || option>3)
+//			break;
+//		printf("Input an element:");//提示输入参数
+//		scanf_s("%d", &value);
+//
+//		select(a, option, value);//调用控制函数
+//		printf("\n");
+//
+//	}
+//
+//	return 0;
+//}
+
+//#include<stdio.h>
+//
+//double fact(int n)
+//{
+//	double sum;
+//	if (n == 1 || n == 0)
+//		return 1;
+//	else
+//		return n * fact(n - 1);
+//	return sum;
+//}
+//
+//int main()
+//{
+//	int n;
+//
+//	scanf_s("%d", &n);
+//	printf("%f", fact(n));
+//
+//	return 0;
+//}
+
+//#include<stdio.h>
+//
+//int main()
+//{
+//	int nums[] = { 1,7,3,6,5,6 };
+//	int mid = 0, left_sum = 0;
+//	int right = sizeof(nums) / sizeof(nums[0])-1;
+//	int right_sum=0;
+//	
+//	for (int i = 0; i < 6; i++)
+//		right_sum += nums[i];
+//	for (int i = 0; i < right; i++)
+//	{
+//		left_sum += nums[i];
+//		if (i > 0)
+//			right_sum -= nums[i - 1];
+//		if (left_sum == right_sum)
+//		{
+//			mid = i;
+//			break;
+//		}
+//	}
+//	printf("%d", mid);
+//
+//	return 0;
+//}
+
+
+//#include<stdio.h>
+//
+//int searchInsert(int* nums, int numsSize, int target)
+//{
+//    int left = 0;
+//    int right = numsSize - 1;
+//    while (left <= right)
+//    {
+//        int mid = (left + right) / 2;
+//        if (nums[mid] == target)
+//            return mid;
+//        else if (nums[mid] < target)
+//            left = mid + 1;
+//        else
+//            right = mid - 1;
+//    }
+//    return left;
+//
+//}
+//
+//int main()
+//{
+//	int nums[] = { 1,3,5,6 };
+//	int numsSize = sizeof(nums) / sizeof(nums[0]);
+//	int target = ;
+//    int x = searchInsert(nums, numsSize, target);
+//
+//    printf("%d", x);
+//	return 0;
+//}
