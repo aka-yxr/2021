@@ -1,0 +1,167 @@
+//最长湍流子数组
+//#include<stdio.h>
+//
+//int maxTurbulenceSize(int* arr, int arrSize)
+//{
+//    int up = 1, dowm = 1, ans = 1;
+//    int middle = 1;
+//    for (int i = 1; i < arrSize ; i++)
+//    {
+//        if (arr[i] > arr[i - 1])
+//        {
+//            up = dowm + 1;
+//            dowm = 1;
+//        }
+//        else if (arr[i] < arr[i - 1])
+//        {
+//            dowm = up + 1;
+//            up = 1;
+//        }
+//        else
+//        {
+//            up = dowm = 1;
+//        }
+//        middle = up > dowm ? up : dowm;
+//        ans = ans > middle ? ans : middle;
+//    }
+//    return ans;
+//
+//}
+//
+//int main()
+//{
+//	int arr[] = { 9,4,2,10,7,8,8,1,9 };
+//	int arrSize = sizeof(arr) / sizeof(arr[0]);
+//	int max = maxTurbulenceSize(arr, arrSize);
+//
+//	printf("%d ", max);
+//
+//	return 0;
+//}
+
+
+//#include<stdio.h>
+//
+//int* twosum(int* nums, int numSsize, int target, int* returnSize)
+//{
+//    static int a[2];
+//    for (int i = 0; i <= numSsize; i++)//第一个循环
+//    {
+//        for (int j = i + 1; j <= numSsize; j++)//二层循环
+//        {
+//            if (nums[i] + nums[j] == target)//判断两个数的值是否与目标相等
+//            {
+//                a[0] = i;//将第一个元素的下标存入a[0]
+//                a[1] = j;//将第二个元素的下标存入a[1]
+//                printf("[%d,%d]\n", a[0], a[1]);      //打印            
+//            }
+//        }
+//    }
+//    return a;
+//}
+//
+//int main(int argc, const char* argv[])
+//{
+//    int nums[] = { 2,7,11,15 };//目标数组
+//    int returnum[2];
+//    int target = 9;//目标
+//    twosum(nums, 4, 9, returnum);
+//
+//    return 0;
+//}
+
+//#include<stdio.h>
+//
+//int main()
+//{
+//	char* p = "abcdef";
+//
+//	printf("%d\n", sizeof(p));//4 or 8,计算指针变量p的大小
+//	printf("%d\n", sizeof(p + 1));//4 or 8 p+1得到的是字符b的地址
+//	printf("%d\n", sizeof(*p));// 1，*p 就是字符串的第一个字符‘a’
+//	printf("%d\n", sizeof(p[0]));// 1 int arr[10]; arr[0]==*(arr+0)  
+//	                              //p[0] == *(p+0)=='a'
+//	printf("%d\n", sizeof(&p));//4 or 8 地址
+//	printf("%d\n", sizeof(&p + 1));// 4 or 8 地址
+//	printf("%d\n", sizeof(&p[0] + 1));4// 4 or 8 地址
+//
+//	return 0;
+//}
+
+//#include<stdio.h>
+//
+//int main()
+//{
+//	char* p = "abcdef";
+//
+//	printf("%d\n", strlen(p));//6 
+//	printf("%d\n", strlen(p + 1));//5
+////	printf("%d\n", strlen(*p));//err
+////	printf("%d\n", strlen(p[0]));//err
+//	printf("%d\n", strlen(&p));//随机值
+//	printf("%d\n", strlen(&p + 1));//随机值
+//	printf("%d\n", strlen(&p[0] + 1));//5
+//
+//	return 0;
+//}
+
+//
+//int* twoSum(int* nums, int numsSize, int target, int* returnSize)
+//{
+//    for (int i = 0; i < numsSize; i++)
+//    {
+//        for (int j = i + 1; j < numsSize; j++)
+//        {
+//            if (nums[i] + nums[j] == target)
+//            {
+//                int* ret = malloc(sizeof(int) * 2);
+//                ret[0] = i, ret[1] = j;
+//                *returnSize = 2;
+//                return ret;
+//            }
+//        }
+//    }
+//    *returnSize = 0;
+//    return NULL;
+//
+//}
+
+//#include<stdio.h>
+//
+//int main()
+//{
+//	int a[3][4] = { 0 };
+//	printf("%d\n", sizeof(a));//3*4*4=48;
+//	printf("%d\n", sizeof(a[0][0]));// 4 第一个元素 
+//	printf("%d\n", sizeof(a[0]));//16 第一行元素
+//	printf("%d\n", sizeof(a[0] + 1));//4 第一行第二个元素
+//	printf("%d\n", sizeof(*(a[0] + 1)));//4 解引用 之后就是第一行第二个元素
+//	printf("%d\n", sizeof(a + 1));// 4 第二行地址
+//	printf("%d\n", sizeof(*(a + 1)));// 16 第二行
+//	printf("%d\n", sizeof(&a[0] + 1));// 4 第二行的地址
+//	printf("%d\n", sizeof(*(&a[0] + 1))); // 16 第二行
+//	printf("%d\n", sizeof(*a));//16  a是第一行的地址，*a就是第一行
+//	printf("%d\n", sizeof(a[3]));//16
+//
+//	return 0;
+//}
+
+//#include<stdio.h>
+//
+//int main()
+//{
+//	int a[5] = { 1,2,3,4,5 };
+//	int* ptr = (int*)(&a + 1);
+//	//               整个数组的地址+1，ptr所指向的是数组a后面的一位
+//	printf("%d,%d", *(a + 1), *(ptr - 1));
+//	// （a+1）是第二个元素，*解引用之后，就是元素本身即2
+//	//（ptr指向的是数组a最后一个元素后面的地址），所以ptr-1，指向的就是数组a的最后一个元素
+//	// *解引用（ptr-1）之后就是 数组a的最后一个元素本身即5
+//	return 0;
+//}
+
+//写代码的三种境界
+//1.看代码是代码
+//2.看代码是内存
+//3.看代码是代码--不需要思考.
+//come on！
