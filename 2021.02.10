@@ -1,0 +1,214 @@
+//指针
+//#include<stdio.h>
+//
+//int main()
+//{
+//	int a[2][5] = { 1,2,3,4,5,6,7,8,9,10 };
+//	int* p1 = (int*)(&a + 1);
+//	//&a 指向a最后的下一个
+//	int* p2 = (int*)(*(a + 1));
+//	//a表示首元素，二维数组的首元素是第一行，（a+1）是第二行
+//    //（a+1）就指向第二行的第一个元素
+//	printf("%d,%d\n", *(p1 - 1), *(p2 - 1));
+//	//     p1指向的是数组a最后一个元素的后面，所以p1-1就指向a的最后一个元素
+//	//     p2指向数组a的第二行的第一个元素，所以p2-1就指向第一行的最后一个元素
+//	//   p1 为10， p2 为5；
+//	return 0;
+
+//×
+//#include<stdio.h>
+//
+//int main()
+//{
+//	//int arr[10] = { 1,2,3,4,5 };
+//	//int* p = arr;
+//	//*(p + 2) == p[2] ==> *(arr + 2) == arr[2];
+//
+//	/*char* a[] = { "work","at","alibaba" };
+//	char** pa = a;
+//	pa++;
+//	//pa++跳过一个char* 类型，即pa指向a的第二个元素
+//	printf("%s\n", *pa);
+//	*/
+//
+//	char* c[] = { "ENTER","NEM","POINT","FIRST" };
+//	char** cp[] = { c + 3,c + 2,c + 1,c };
+//	//          "FIRST", "POINT","NEM","ENTER";
+//	char*** cpp = cp;
+//	printf("%s\n", **++cpp);
+//	//  "POINT"
+//	printf("%s\n", *-- * ++cpp + 3);
+//	//先++cpp指向MEN,解引用之后--解引用指向ENTER的首元素地址，+3，则指向ER
+//	printf("%s\n", *cpp[-2] + 3);
+//	//*cpp[-2] 等价于* *(app-2)+3;
+//	printf("%s\n", cpp[-1][-1] + 1);
+//	//*(*(cpp-1)-1)+1;
+//	//
+//	return 0;
+//}
+
+//#include<stdio.h>
+//#include<string.h>
+//
+//int main()
+//{
+//    char ch[25][11], str[10], t[25];
+//    int n = 0;
+//    while (1)
+//    {
+//        gets(str);
+//        if (str[0] == '#')
+//            break;
+//        else
+//        {
+//            strcpy(ch[n], str);
+//            n++;
+//        }
+//    }
+//    for (int i = 0; i < n - 1; i++)
+//    {
+//        for (int j = 0; j < n - i - 1; j++)
+//        {
+//            if (strlen(ch[j]) > strlen(ch[j + 1]))
+//            {
+//                //交换
+//                strcpy(t, ch[j]);
+//                strcpy(ch[j], ch[j + 1]);
+//                strcpy(ch[j + 1], t);
+//            }
+//        }
+//    }
+//    for (int i = 0; i < n; i++)
+//    {
+//        printf("%s ", ch[i]);
+//    }
+//    return 0;
+//}
+
+//#include <stdio.h>
+//
+//int main()
+//{
+//    int n;
+//    int ch[10] = { 0 };
+//    scanf("%d", &n);
+//    for (int i = 0; i < n; i++)
+//    {
+//        int num;
+//        scanf("%d ", &num);
+//        if (num == 0)
+//            ch[0]++;
+//        while (num > 0)
+//        {
+//            ch[num % 10]++;
+//            num = num / 10;
+//        }
+//    }
+//    int max = 0;
+//    for (int i = 0; i < 10; i++)
+//        if (max < ch[i])
+//            max = ch[i];
+//
+//    printf("%d:", max);
+//
+//    for (int i = 0; i < 10; i++)
+//        if (max == ch[i])
+//            printf(" %d", i);
+//    printf("\n");
+//    return 0;
+//}
+
+//#include<stdio.h>
+//#include<math.h>
+//
+//int prime(int p)
+//{
+//    if (p <= 1)
+//        return 0;
+//    else if (p == 2)
+//        return 1;
+//    else
+//    {
+//        int i = 2;
+//        for (i; i < sqrt(p) + 1; i++)
+//        {
+//            if (p % i == 0)
+//                return 0;
+//        }
+//        return 1;
+//    }
+//}
+//
+//int main()
+//{
+//    int i = 100, count = 0;
+//    for (i; i < 1000; i++)
+//        if (prime(i))
+//            count++;
+//
+//    printf("%d\n", count);
+//    return 0;
+//}
+
+//#include<stdio.h>
+//int main()
+//{
+//    int a[11] = { 1,4,6,9,13,16,19,28,40,100 };
+//    int temp1, temp2, number, end, i, j;
+//    printf("原始数组是:\n");
+//    for (i = 0; i < 10; i++)
+//        printf("%4d", a[i]);
+//    printf("\n插入一个新的数字: ");
+//    scanf("%d", &number);
+//    end = a[9];
+//    if (number > end)
+//        a[10] = number;
+//    else
+//    {
+//        for (i = 0; i < 10; i++)
+//        {
+//            if (a[i] > number)
+//            {
+//                temp1 = a[i];
+//                a[i] = number;
+//                for (j = i + 1; j < 11; j++)
+//                {
+//                    temp2 = a[j];
+//                    a[j] = temp1;
+//                    temp1 = temp2;
+//                }
+//                break;
+//            }
+//        }
+//    }
+//    for (i = 0; i < 11; i++)
+//        printf("%4d", a[i]);
+//    printf("\n");
+//    return 0;
+//}
+
+//#include<stdio.h>
+//
+//int main()
+//{
+//	int arr[] = { 1,2,3,4,5 };
+//	int i = 0;
+//	int start = 1;
+//	int mod = 1;
+//	scanf_s("%d %d", &start, &mod);
+//	for (i = start; i < 5; i++)
+//	{
+//		if (arr[i] % mod == 0)
+//		{
+//			continue;
+//			printf("%d ", arr[i] + 1);
+//			if (arr[i] % (mod + 1) == 0)
+//			{
+//				break;
+//			}
+//		}
+//		else
+//			printf("%d ", arr[i]);
+//	}
+//	return 0;
+//}
