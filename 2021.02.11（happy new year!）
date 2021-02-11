@@ -1,0 +1,294 @@
+//#include<stdio.h>
+//
+//int main()
+//{
+//	unsigned long pularray[] = { 6,7,8,9,10 };
+//	//                                 12
+//	unsigned long* pulptr;
+//	pulptr = pularray;
+//	*(pulptr + 3) += 3;
+//	//把9修改为12；
+//	printf("%d,%d\n", *pulptr, *(pulptr + 3));
+//	//                 6   12
+//	//整型指针解引用能访问四个字节
+//	//
+//	return 0;
+//}
+
+//#include<stdio.h>
+//#include<string.h>
+//#include<assert.h>
+//
+//void reverse(char* a)
+//{
+//	assert(a);
+//	int len = strlen(a);
+//	char* left = a;
+//	char* right = a - 1 + len;
+//	while (left < right)
+//	{
+//		char tmp = *left;
+//		*left = *right;
+//		*right = tmp;
+//		left++;
+//		right--;
+//	}
+//}
+//
+//int main()
+//{
+//	char arr[256] = { 0 };
+//	gets(arr);
+//    //逆序
+//	reverse(arr);
+//	printf("%s", arr);
+//
+//	return 0;
+//}
+
+//#include<stdio.h>
+//
+//int main()
+//{
+//    int A, B, D;
+//    int num[999];
+//    scanf("%d %d %d", &A, &B, &D);
+//    //123+456=579
+//    //1.  579%8=3,579/8=72
+//    //2.  72&8=0,72/8=9
+//    //3.  9%8=1,9/8=1
+//    //4.  1%8=1,1/8=0
+//    int n = A + B;
+//    int i = 0;
+//    do
+//    {
+//        num[i] = n % D;
+//        n = n / D;
+//        i++;
+//
+//    } while (n > 0);
+//    for (int j = i - 1; j >= 0; j--)
+//        printf("%d", num[j]);
+//    printf("\n");
+//    return 0;
+//}
+
+//#include<stdio.h>
+//
+//int main()
+//{
+//    //arr[10];     2 2 0 0 0 3 0 0 1 0
+//    //             0 1 2 3 4 5 6 7 8 9
+//    //   int num[10]={0};
+//    int arr[10], i = 0;
+//    for (; i < 10; i++)
+//    {
+//        scanf_s("%d ", &arr[i]);
+//    }
+//    int frist = 0;
+//    for (i = 0; i < 10; i++)
+//    {
+//        //找第一个数字
+//        for (int j = 1; j < 10; j++)
+//        {
+//            if (frist == 1)
+//                break;
+//            if (arr[j] != 0 && frist == 0)
+//            {
+//                printf("%d", j);
+//                arr[j]--;
+//                frist = 1;
+//                break;
+//            }
+//        }
+//        //剩下的数字
+//        while (arr[i] > 0)
+//        {
+//            printf("%d", i);
+//            arr[i]--;
+//        }
+//    }
+//    printf("\n");
+//    return 0;
+//}
+
+//#include<stdio.h>
+//#include<string.h>
+//
+//int main()
+//{
+//	char ch[] = "abcedfghiEnh";
+//	            
+//	int len = sizeof(ch) / sizeof(ch[0]);
+//	char* n = (int)strchr(ch, 'E');
+//	printf("%d,%s", len, n);
+//
+//	return 0;
+//}
+
+//#include<stdio.h>
+//#include<stdbool.h>
+//#include<math.h>
+////#define pi 3.14
+////const double pi = 3.14;
+////define 不禁可以定义常量，也可以定义任何语句或者片段
+////#define 标识符 任何语句或片段
+////eg；#define ADD(a,b) ((a)+(b))
+////       ADD(a,b)可以代替a+b的功能
+////另：括号是不能少的，因为宏定义是直接将对应的部分替换，然后才进行编译和运行
+//
+////#define ADD(a,b) ((a)+(b))
+//
+//int main()
+//{
+//	/*bool flag1 = 0, flag2 = true;
+//	int a = 1, b = 1;
+//	printf("%d %d %d\n", flag1, flag2, a == b);*/
+//	//==会被当做一个条件，系统会判断==两端是否相等，相等则输出1，不相等则输出0
+//	
+//	/*double r = 12.56;
+//	int a = 3, b = 5;
+//	printf("%d\n", (int)r);
+//	printf("%d\n", a / b);
+//	printf("%.1f\n", (double)a / (double)b);*/
+//	
+//	/*double r = 3;
+//	printf("%f\n", pi * r * 2);*/
+//	
+//	/*int num1 = 3, num2 = 5;
+//	printf("%d\n", ADD(num1, num2));*/
+//
+//
+//	//typedef long long LL;//给long long 起个别名LL
+//	//typedef 能给复杂的数据起一个别名
+//	//LL a = 123456789012345, b = 234567890123456;
+//	//printf("%lld\n", a + b);
+//
+//	double x1 = 5.2, x2 = 5.7;
+//	//printf("%.0f %.0f\n",floor(x1), ceil(x1));
+//	//printf("%.0f,%.0f\n", floor(x2), ceil(x2));
+//	//floor函数 向下取整 ceil函数 向上取整
+//	//printf("%d,%d\n", (int)round(x1), (int)round(x2));
+//
+//	printf("胜利哥哥，快找女朋友");
+//	return 0;
+//}
+
+//#include <stdio.h>
+//#include <string.h>
+//
+//union Data
+//{
+//	int i;
+//	float f;
+//	char  str[20];
+//};
+//
+//int main()
+//{
+//	union Data data;
+//
+//	printf("Memory size occupied by data : %d\n", sizeof(data));
+//
+//	return 0;
+//}
+
+//#include <stdio.h>
+//#include <math.h>
+//
+//
+//float f(float x, float y, float z) {
+//    float a;
+//    a = x * x + 9.0f / 4.0f * y * y + z * z - 1;
+//    return a * a * a - x * x * z * z * z - 9.0f / 80.0f * y * y * z * z * z;
+//}
+//
+//
+//float h(float x, float z) {
+//    float y;
+//    for (y = 1.0f; y >= 0.0f; y -= 0.001f)
+//        if (f(x, y, z) <= 0.0f)
+//            return y;
+//    return 0.0f;
+//}
+//
+//
+//void main() {
+//    float z, x, v, y0, ny, nx, nz, nd, d;
+//    for (z = 1.5f; z > -1.5f; z -= 0.05f) {
+//        for (x = -1.5f; x < 1.5f; x += 0.025f) {
+//            v = f(x, 0.0f, z);
+//            if (v <= 0.0f) {
+//                y0 = h(x, z);
+//                ny = 0.01f;
+//                nx = h(x + ny, z) - y0;
+//                nz = h(x, z + ny) - y0;
+//                nd = 1.0f / sqrtf(nx * nx + ny * ny + nz * nz);
+//                d = (nx + ny - nz) * nd * 0.5f + 0.5f;
+//                putchar(".:-=+*#%@"[(int)(d * 5.0f)]);
+//            }
+//            else
+//                putchar(' ');
+//        }
+//        putchar('\n');
+//    }
+//}
+
+//#include <stdlib.h>
+//#include<stdio.h>
+//
+//int main()
+//{
+//	int i = 0, j = 0;
+//	int a = 3;
+//	char c = 3;//心形的ASCII代码是3
+//	for (i = 0; i < 3; i++)//行数  3行
+//	{
+//		for (j = 0; j < 5 - 2 * i; j++)//空格， 5，3，1个空格
+//		{
+//			printf(" ");
+//		}
+//		for (j = 0; j < 5 + 4 * i; j++)//打印符号
+//		{
+//			printf("%c", c);
+//		}
+//		for (j = 0; j < 9 - 4 * i; j++)//打印空格
+//		{
+//			printf(" ");
+//		}
+//		for (j = 0; j < 5 + 4 * i; j++)//打印符号
+//		{
+//			printf("%c", c);
+//		}
+//
+//		printf("\n");
+//
+//	}
+//	for (i = 0; i < 3; i++)//打印行数3行
+//	{
+//		for (j = 0; j < 29; j++)//打印符号
+//			printf("%c", c);
+//		printf("\n");//打印空格
+//
+//	}
+//	for (i = 0; i < 6 + 1; i++)//    打印6行
+//	{
+//		for (j = 0; j < 2 * i + 1; j++)//打印空格
+//			printf(" ");
+//		for (j = 0; j < 27 - 4 * i; j++)
+//			printf("%c", c);
+//		printf("\n");
+//	}
+//	for (i = 0; i < 1; i++)//打印行数1行
+//	{
+//		for (j = 0; j < 14; j++)//打印空格
+//			printf(" ");
+//		for (j = 0; j < 1; j++)//打印符号
+//			printf("%c", c);
+//		printf("\n");
+//	}
+//
+//	system("pause");
+//	return 0;
+//}
+
