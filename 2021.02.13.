@@ -1,0 +1,205 @@
+//#include<stdio.h>
+//
+//struct s
+//{
+//	int a;
+//	int b;
+//};
+//
+//int main()
+//{
+//	struct s a, * p = &a;
+//	a.a = 99;
+//	printf("%d\n", (*p).a);
+//	printf("%d\n", p->a);
+//	printf("%d\n", a.a);
+//
+//	return 0;
+//}
+
+//#include<stdio.h>
+//
+//struct stu
+//{
+//	int num;
+//	char name[10];
+//	int age;
+//};
+//
+//void fun(struct stu* p)
+//{
+//	printf("%s\n", p->name);
+//	return;
+//}
+//
+//int main()
+//{
+//	struct stu s[3] = { {9801,"zhangsan",20},{9802,"wangwu",19},{9803,"lisi",18 }, };
+//
+//	fun(s + 1);
+//
+//	return 0;
+//}
+
+//喝汽水,汽水1元一瓶，2个空瓶换一瓶，给20元，能喝多少汽水
+//#include<stdio.h>
+//
+//int main()
+//{
+//	int money = 0;
+//	int kong = 0;
+//	int total = 0;
+//	scanf_s("%d", &money);
+//	//买回来的人汽水喝
+//	total = money;
+//	kong = money;
+//	//换回来的汽水
+//	while (kong >= 2)
+//	{
+//		total += kong / 2;
+//		kong = kong / 2 + kong % 2;
+//	}
+//	printf("一共能喝 %d 瓶汽水\n", total);
+//
+//	return 0;
+//}
+
+
+//#include<stdio.h>
+//#include<stdlib.h>
+//
+//int cmp(const void* a, const void* b)
+//{
+//	return *(int*)a - *(int*)b;
+//}
+//
+//void print(int arr[], int sz)
+//{
+//	int i = 0;
+//	for (i; i < sz; i++)
+//	{
+//		printf("%d ", arr[i]);
+//	}
+//	printf("\n");
+//}
+//
+////只是交换奇偶数
+////1 2 3 4 5 6 7 8 9 11
+//void move1(int arr[], int sz)
+//{
+//	int left = 0;
+//	int right = sz - 1;
+//	while (left<right)
+//	{
+//		//从左边找偶数
+//		while ((left<right)&&(arr[left] % 2 == 1))
+//		{
+//			left++;
+//		}
+//		//从右边找奇数
+//		while ((left < right) && (arr[right] % 2 == 0))
+//		{
+//			right--;
+//		}
+//		if (left < right)
+//		{
+//			int tmp = arr[left];
+//			arr[left] = arr[right];
+//			arr[right] = tmp;
+//		}
+//
+//	}
+//
+//}
+//
+////1 11 3 9 5 7 6 8 4 2
+//void move2(int arr[], int sz)
+//{
+//	int i = 0, flag = 0;
+//	for (i; i < sz; i++)
+//	{
+//		//数 有多少个奇数
+//		if (arr[i] % 2 == 1)
+//		{
+//			flag++;
+//		}
+//	}
+//	//把奇数从小到大排序
+//	qsort(arr, flag, sizeof(int), cmp);
+//	//把偶数从小到大排序
+//	qsort(arr + flag, sz - flag, sizeof(int), cmp);
+//}
+//
+////1 2 3 4 5 6 7 8 9 11
+//void move3(int arr[], int sz)
+//{
+//	int odd[99] = { 0 }, even[99] = {0};
+//	int i = 0, k = 0, j = 0;
+//	for (i; i < sz; i++)
+//	{
+//		if (arr[i] % 2 == 1)
+//		{
+//			odd[k] = arr[i];
+//			k++;
+//		}
+//		else
+//		{
+//			even[j] = arr[i];
+//			j++;  
+//		}
+//	}
+//	for (i = 0; i < k; i++)
+//	{
+//		arr[i] = odd[i];
+//	}
+//	for (j=0; i < sz; i++,j++)
+//	{
+//		arr[i] = even[j];
+//	}
+//	
+//}
+//
+//int main()
+//{
+//	int arr[] = { 1,11,3,5,4,2,7,8,9,6 };
+//	int sz = sizeof(arr) / sizeof(arr[0]);
+//	//从小到大排序
+//	qsort(arr, sz, sizeof(arr[0]), cmp);
+//	//奇数后偶数排序(不考虑大小顺序)
+//	printf("one:\n");
+//	move1(arr, sz);
+//	print(arr, sz);
+//	//按从小到大和先奇后偶的顺序排序
+//	printf("two:\n");
+//	move2(arr, sz);
+//	print(arr, sz);
+//
+//	//move1 和 move2 可以合二为一。
+//	printf("three:\n");
+//	qsort(arr, sz, sizeof(int), cmp);
+//	move3(arr, sz);
+//	print(arr, sz);
+//
+//	return 0;
+//}
+
+//#include<stdio.h>
+//
+//int main()
+//{
+//	unsigned char a = 200;
+//	unsigned char b = 100;
+//	unsigned char c = 0;
+//
+//	c = a + b;
+//	//整型提升
+//	//11001000-a;
+//	//01100100-b;
+//	//1,00101100-c;
+//
+//	printf("%d %d", a + b, c);
+//	// 300  44
+//
+//	return 0;
+//
+
