@@ -1,0 +1,208 @@
+//日期差值
+//#include<stdio.h>
+//
+//int isLeap(int year)
+//{
+//	if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0)
+//		return 1;
+//	else
+//		return 0;
+//}
+//
+//int main()
+//{
+//	int month[13][2] = {
+//		{0,0},{31,31},{28,29},{31,31},{30,30},{31,31},{30,30},
+//		{31,31},{31,31},{30,30},{31,31},{30,30},{31,31}
+//	};
+//	int time1=0, y1, m1, d1;
+//	int time2, y2, m2, d2;
+//	while (~scanf_s("%d %d", &time1, time2))
+//	{
+//		if (time1 > time2)
+//		{
+//			int tmp = time1;
+//			time1 = time2;
+//			time2 = time1;
+//		}
+//		y1 = time1 / 10000, m1 = time1 % 10000 / 100, d1 = time1 % 100;
+//		y2 = time2 / 10000, m2 = time2 % 10000 / 100, d2 = time2 % 100;
+//		int ans = 1;
+//		while (y1 < y2 || m1 < m2 || d1 < d2)
+//		{
+//			d1++;
+//			if (d1 == month[m1][isLeap(y1)] + 1)
+//			{
+//				m1++;
+//				d1 = 1;
+//			}
+//			if (m1 == 13)
+//			{
+//				y1++;
+//				m1 = 1;
+//			}
+//			ans++;
+//		}
+//		printf("%d\n", ans);
+//	}
+//
+//	return 0;
+//}
+
+//转换进制
+//#include<stdio.h>
+//
+//int main()
+//{
+//	int a, b, d;
+//	scanf_("%d%d%d", &a, &b, &d);
+//	int sum = a + b;
+//	int ans[31], num = 0;
+//	do {
+//		ans[num++] = sum % d;
+//		sum /= d;
+//
+//	} while (sum);
+//	for (int i = num - 1; i >= 0; i--)
+//		printf("%d", ans[i]);
+//
+//	return 0;
+//}
+
+//回文串
+//#include<stdio.h>
+//#include<string.h>
+//
+//int judge(char str[])
+//{
+//	int len = strlen(str);
+//	for (int i = 0; i < len / 2; i++)
+//	{
+//		if (str[i] != str[len - 1 - i])
+//			return 0;
+//	}
+//	return 1;
+//}
+//
+//int main()
+//{
+//	char str[256];
+//	while (gets(str))
+//	{
+//		int ret = judge(str);
+//		if (ret == 1)
+//			printf("YES\n");
+//		else
+//			printf("NO\n");
+//	}
+//
+//	return 0;
+//}
+
+//说反话
+//#include<stdio.h>
+//#include<string.h>
+//
+//int main()
+//{
+//	char str[90];
+//	gets(str);
+//	int len = strlen(str), r = 0, h = 0;
+//	char ans[90][90];
+//	for (int i = 0; i < len; i++)
+//	{
+//		if (str[i] != ' ')
+//			ans[r][h++] = str[i];
+//		else
+//		{
+//			ans[r][h] = '\0';
+//			r++;
+//			h = 0;
+//		}
+//	}
+//	for (int i = r; i >= 0; i--)
+//	{
+//		printf("%s", ans[i]);
+//		if (i > 0)
+//			printf(" ");
+//	}
+//
+//	return 0;
+//}
+
+//#define _CRT_SECURE_NO_WARNINGS
+//#include<stdio.h>
+//#include<assert.h>
+//#include<string.h>
+
+//unsigned int my_strlen(const char* str)
+//{
+//	int count = 0;
+//	assert(str != NULL);
+//	while (*str )
+//	{
+//		count++;
+//		str++;
+//	}
+//	return count;
+//}
+//
+//int main()
+//{
+//	int len = my_strlen("abcdef");
+//
+//	printf("%d\n", len);
+//	return 0;
+//}
+
+//char* my_strcpy(char* s1,const char* s2)
+//{
+//	assert(s1);
+//	assert(s2);
+//	char* ret = s1;
+//	while (*s1++ = *s2++)
+//	{
+//		;
+//	}
+//	//返回
+//	return ret;
+//}
+//
+//int main()
+//{
+//	char arr1[] = "abcdef";
+//	char arr2[] = "ghj";
+//	my_strcpy(arr1, arr2);
+//	printf("%s", arr1);
+//
+//	return 0;
+//}
+
+//my_strcat(char* s1, const char* s2)
+//{
+//	char* ret = s1;
+//	assert(s1);
+//	assert(s2);
+//	//1.找到目标字符串的“\0”;
+//	while (*s1)
+//	{
+//		s1++;
+//	}
+//	//2.追加字符串
+//	while (*s1++ = *s2++)
+//	{
+//		;
+//	}
+//	return ret;
+//}
+//
+//int main()
+//{
+//	char arr1[30] = "hello";
+//	char arr2[] = "world";
+//
+//	my_strcat(arr1, arr2);
+//	printf("%s\n", arr1);
+//
+//	return 0;
+//}
