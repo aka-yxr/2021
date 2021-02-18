@@ -1,0 +1,146 @@
+//#include<stdio.h>
+//
+//
+//int main()
+//{
+//    int height[17] = { 7,9,10,5,8,4,2,1,6,3,7,9,10,5,8,4,2 };///对应位上的权重
+//    char m[11] = { '1','0','X','9','8','7','6','5','4','3','2' };///校验码
+//    int n, sum, bj1 = 0, i, bj2;///bj1是用来判断该组数据是否全对
+//    char s[20] ;
+//    scanf_s("%d", &n);
+//    for (int k = 0; k < n; k++)
+//    {
+//      //  scanf_s("%s", s);
+//        sum = 0;
+//        bj2 = 0;///bj2是用来判断当前这个身份证的前17位是否都是数字
+//        for (i = 0; i < 17; i++)
+//        {
+//            if (s[i] >= '0' && s[i] <= '9')
+//                sum += (s[i] - '0') * height[i];
+//            else
+//            {
+//                bj2 = 1;
+//                break;
+//            }
+//        }
+//        if (bj2 == 1 || m[sum % 11] != s[17])
+//        {
+//            printf("%s\n", s);
+//            bj1 = 1;
+//        }
+//    }
+//    if (bj1 == 0)
+//        printf("All passed\n");
+//    return 0;
+//}
+
+
+//#include<cstring>
+//#include<algorithm>
+//#include<cstdio>
+//
+//struct stu
+//{
+//	char id[15];
+//	int score;
+//	int number;
+//	int rank;
+//}s[30010];
+//
+//bool cmp(stu a, stu b)
+//{
+//	if (a.score != b.score)
+//		return a.score > b.score;
+//	else
+//		return strcmp(a.id, b.id) < 0;
+//}
+//
+//int main()
+//{
+//	int n, k, num = 0;
+//	scanf_s("%d", &n);
+//	for (int i = 1; i <= n; i++)
+//	{
+//		scanf_s("%d", k);
+//		for (int j = 0; j < k; j++)
+//		{
+//			scanf_s("%s %d", s[i].id, &s[i].score);
+//			s[num].number = i;
+//			num++;
+//		}
+//		sort(s + num - k, s + num, cmp);
+//		s[num - k].number = i;
+//		for (int j = num - k + 1; j < num;j++)
+//		{
+//			if (s[j].score == s[j - 1].score)
+//				s[j].rank = s[j - 1].rank;
+//			else
+//				s[i].rank = j + 1 - num + k;
+//		}
+//
+//	}
+//	printf("%d\n", num);
+//	sort(s, s + num, cmp);
+//	int r = 1;
+//	for (int i = 0; i < num; i++)
+//	{
+//		if (i > 0 && s[i].score != s[i - 1].score)
+//			r = i + 1;
+//		printf("%s ", s[i].id);
+//		printf("%d %d %d\n", r, s[i].number, s[i].rank);
+//
+//	}
+//
+//	return 0;
+//}
+
+//strcmp
+//#include<stdio.h>
+//#include<string.h>
+//#include<assert.h>
+
+
+//int main()
+//{
+//	char* p1 = "abcdef";
+//	char* p2 = "sqwer";
+//	int ret = strcmp(p1, p2);
+//
+//	if (strcmp(p1, p2) > 0)
+//		printf("p1>p2\n");
+//	else if (strcmp(p1, p2) == 0)
+//		printf("p1==p2");
+//	else if (strcmp(p1, p2) < 0)
+//		printf("p1<p2");
+//
+//	return 0;
+//}
+
+//int my_strcmp(char* s1,const char* s2)
+//{
+//	assert(s1);
+//	assert(s2);
+//
+//	while (*s1 == *s2)
+//	{
+//		if (*s1 == '\0')//相等
+//			return 0;
+//		s1++;
+//		s2++;
+//	}
+//	if (*s1 > *s2)
+//		return 1;
+//	else
+//		return -1;
+//}
+//
+//int main()
+//{
+//	char* p1 = "abcdef";
+//	char* p2 = "abqwe";
+//
+//	int ret = my_strcmp(p1, p2);
+//	printf("ret = %d\n", ret);
+//
+//	return 0;
+//}
