@@ -1,0 +1,182 @@
+//#define _CRT_SECURE_NO_WARNINGS
+//#include<stdio.h>
+//#include<string.h>
+//#include<assert.h>
+
+//strncpy
+
+//char* my_strncpy(char* s1, const char* s2, int k)
+//{
+//	assert(s1);
+//	assert(s2);
+//	char* ret = s1;
+//	while (k && (*s1++ = *s2++))
+//	{
+//		k--;
+//	}
+//	//s2长度小于k
+//	if (k)
+//		while (--k)
+//			*s1++ = '\0';
+//	return ret;
+//}
+//
+//int main()
+//{
+//	char arr1[10] = "abcdef";
+//	char arr2[] = "hello!";
+//
+//	//strncpy(arr1, arr2, 4);
+//	//模拟实现
+//	 my_strncpy(arr1, arr2, 4);
+//
+//	//strcpy(arr1, arr2);
+//	printf("%s\n", arr1);
+//
+//	return 0;
+//}
+
+
+//strncat
+
+//char* my_strncat(char* s1, const char* s2, int k)
+//{
+//	assert(s1);
+//	assert(s2);
+//	char* ret = s1;
+//	while (*s1++)
+//		;
+//	s1--;
+//	while (k--)
+//		if (!(*s1++ = *s2++))
+//			return ret;
+//	*s1 = '\0';
+//	return ret;
+//}
+//
+//int main()
+//{
+//	char arr1[30] = "abcdefgh";
+//	char arr2[] = "HTML CSS";
+//
+//	my_strncat(arr1, arr2, 4);
+//	//strncat(arr1, arr2, 4);
+//
+//	printf("%s", arr1);
+//
+//	return 0;
+//}
+
+
+//strstr --查找字符串
+
+//char* my_strstr(const char* s1, const char* s2)
+//{
+//	assert(s1);
+//	assert(s2);
+//	char* p1 = s1;
+//	char* p2 = s2;
+//	char* ret = s1;
+//	if (*s2 == '\0')
+//		return (char*)s1;
+//	while (*ret)
+//	{
+//		p1 = ret;
+//		p2 = s2;
+//		while (*p1  && *p2 && (*p1 == *p2))
+//		{
+//			p1++;
+//			p2++;
+//		}
+//		if (!*p2)
+//		{
+//			return ret;//找到了
+//		}
+//		ret++; 
+//	}
+//	return NULL;//找不到
+//}
+//
+//int main()
+//{
+//	char* p1 = "adcdefghj";
+//	char* p2 = "def";
+//
+//	char* ret = my_strstr(p1, p2);
+//	//char* ret = strstr(p1, p2);
+//
+//	if (ret == NULL)
+//		printf("字串不存在\n");
+//	else
+//		printf("%s\n", ret);
+//	return 0;
+//}
+
+//int main()
+//{
+//	char s[15] = "aZ &\n09 Az";
+//    int letter = 0, blank = 0, digit = 0, other = 0;
+//    int i = 0;
+//    while (s[i])
+//    {
+//        if (isalpha(s[i]))
+//            letter++;
+//        else if (s[i] == ' ' || s[i] == '\n')
+//            blank++;
+//        else if (isdigit(s[i]))
+//            digit++;
+//        else
+//            other++;
+//        i++;
+//    }
+//    printf("letter = %d, blank = %d, digit = %d, other = %d", letter, blank, digit, other);
+//
+//	return 0;
+//}
+
+
+//strtok
+//int main()
+//{
+//	char arr[] = "zxc@bity.dsfdf";
+//	char* p = "@.";
+//	
+//	char* ret = NULL;
+//	for (ret = strtok(arr, p); ret != NULL; ret = strtok(NULL, p))
+//	{
+//		printf("%s\n", ret);
+//	}
+//
+//	return 0;
+//}
+
+
+//strerror--错误码函数
+//#include<errno.h>
+//
+//int main()
+//{
+//	FILE* pf = fopen("text.txt", "r");
+//
+//	if (pf == NULL)
+//		printf("%s\n", strerror(errno));
+//	else
+//		printf("open file success\n");
+//
+//	return 0;
+//}
+
+//iscntrl--任何控制字符
+//isspace--空白字符 ，空格，换行，换页‘\f’，回车'\r'，制表符...
+//isdigit--十进制数字
+//isxdigit--十六进制数字
+//islower--小写英文字母
+//isupper--大写英文字母
+//isalpha--是否为英文字母
+//isalnum--是否 是字母或者数字
+//ispunct--标点符号，任何不属于数字或者字母的圆形字符
+//isgraph--任何圆形字符
+//isprint--任何可打印字符
+//字符转换
+//tolower--大写变小写
+//toupper--小写变大写
