@@ -1,0 +1,169 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+#include<string.h>
+#include<assert.h>
+
+
+//memcpy
+//全类型拷贝函数
+
+//struct stu
+//{
+//	char name[20];
+//	int age;
+//};
+//	
+//void* my_memcpy(void* s1, const void* s2, size_t num)
+//{
+//	void* ret = s1;
+//	assert(s1);
+//	assert(s2);
+//	while (num--)
+//	{
+//		*(char*)s1 = *(char*)s2;
+//		++(char*)s1;
+//		++(char*)s2;
+//	}
+//	return ret;
+//}
+//
+//int main()
+//{
+//	struct stu s[] = { {"张三",20},{"王五",30} };
+//	struct stu arr3[3] = { 0 };
+//	int arr1[] = { 1,2,3,4,5,6,7,8,9,10 };
+//	int arr2[5] = { 0 };
+//
+//	//my_memcpy(arr1+2, arr1, 20);
+//	//my_memcpy(arr3, s, sizeof(s));
+//	memmove(arr1 + 2, arr1, 20);
+//	
+//	for (int i = 0; i < 10; i++)
+//	{
+//		printf("%d ", arr1[i]);
+//	}
+//	printf("\n");
+//	/*for (int i = 0; i < 3; i++)
+//	{
+//		printf("%s %d\n", s[i].name, s[i].age);
+//	}*/
+//
+//	return 0;
+//}
+
+
+//memmove
+//
+
+//void* my_memmove(void* dest, const void* src, size_t num)
+//{
+//	char* ret = dest;
+//	assert(dest);
+//	assert(src);
+//	if (dest < src)
+//	{
+//		//前->后
+//		while (num--)
+//		{
+//			*(char*)dest = *(char*)src;
+//			++(char*)dest;
+//			++(char*)src;
+//		}
+//	}
+//	else
+//	{
+//		//后->前
+//		while (num--)
+//		{
+//			*((char*)dest + num) = *((char*)src + num);
+//		}
+//	}
+//	return ret;
+//
+//}
+//
+//int main()
+//{
+//
+//	int arr[] = { 1,2,3,4,5,6,7,8,9,10 };
+//
+//	my_memmove(arr + 2, arr, 20);
+//
+//	for (int i = 0; i < 10; i++)
+//	{
+//		printf("%d ", arr[i]);
+//	}
+//	return 0;
+//}
+
+//#include<stdio.h>
+//#include<string.h>
+//
+//int main()
+//{
+//    char ch[25][11], str[10], t[25];
+//    int n = 0;
+//    while (1)
+//    {
+//        gets(str);
+//        if (str[0] == '#')
+//            break;
+//        else
+//        {
+//            strcpy(ch[n], str);
+//            n++;
+//        }
+//    }
+//    for (int i = 0; i < n - 1; i++)
+//    {
+//        for (int j = 0; j < n - i - 1; j++)
+//        {
+//            if (strlen(ch[j]) > strlen(ch[j + 1]))
+//            {
+//                //交换
+//                strcpy(t, ch[j]);
+//                strcpy(ch[j], ch[j + 1]);
+//                strcpy(ch[j + 1], t);
+//            }
+//        }
+//    }
+//    for (int i = 0; i < n; i++)
+//    {
+//        printf("%s ", ch[i]);
+//    }
+//    return 0;
+//}
+
+
+//#include <stdio.h>
+//
+//int main()
+//{
+//    int n;
+//    int ch[10] = { 0 };
+//    scanf("%d", &n);
+//    for (int i = 0; i < n; i++)
+//    {
+//        int num;
+//        scanf("%d ", &num);
+//        if (num == 0)
+//            ch[0]++;
+//        while (num > 0)
+//        {
+//            ch[num % 10]++;
+//            num = num / 10;
+//        }
+//    }
+//    int max = 0;
+//    for (int i = 0; i < 10; i++)
+//        if (max < ch[i])
+//            max = ch[i];
+//
+//    printf("%d:", max);
+//
+//    for (int i = 0; i < 10; i++)
+//        if (max == ch[i])
+//            printf(" %d", i);
+//    printf("\n");
+//    return 0;
+//}
