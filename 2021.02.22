@@ -1,0 +1,150 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+#include<string.h>
+#include<assert.h>
+
+//内存对齐会提高效率
+//用空间换取时间
+//让内存小的成员集中在一起
+
+//struct s3
+//{
+//	double a;
+//	char b;
+//	int c;
+//};
+//
+//struct s4
+//{
+//	char c1;
+//	struct s3 s1;
+//	double d;
+//};
+//
+//int main()
+//{
+//	struct s3 s = { 0 };
+//	struct s4 arr = { 0 };
+//	printf("%d\n", sizeof(s));
+//	printf("%d\n", sizeof(arr));
+//
+//	return 0;
+//}
+
+//#pragma pack(4)//设置默认对齐数
+//struct S
+//{
+//	char c1;
+//	double d;
+//};
+//#pragma pack()
+////取消设置的默认对齐数
+
+//当对齐数不合适时，可以修改对齐数.
+//#pragma pack(1)//设置默认对齐数
+//struct S
+//{
+//	char c1;
+//	double d;
+//};
+//#pragma pack()
+////取消设置的默认对齐数
+//
+//int main()
+//{
+//	struct S s = { 0 };
+//	printf("%d\n", sizeof(s));
+//
+//	return 0;
+//}
+
+//offsetof()
+//struct S
+//{
+//	char c;
+//	int i;
+//	double d;
+//
+//};
+//
+//int main()
+//{
+//	printf("%d\n",offsetof()) ;
+//
+//	return 0;
+//}
+
+
+//结构体传参
+//结构体传参时，需要传结构体的地址。
+
+//struct S
+//{
+//	int a;
+//	char c;
+//	double d;
+//};
+//
+//void Init(struct S* s)
+//{
+//	s->a = 100;
+//	s->c = 'H';
+//	s->d = 3.14;
+//}
+//
+//void Print(struct S s)
+//{
+//	printf("%d %c %.2f\n", s.a, s.c, s.d);
+//}
+//
+//void Print2(const struct S* s)
+//{
+//	printf("%d %c %.2f\n", s->a, s->c, s->d);
+//}
+//
+//int main()
+//{
+//	struct S s;
+//	Init(&s);
+//	Print(s);
+//	Print2(&s);
+//
+//	return 0;
+//}
+
+
+//位段--二进制位
+//位段的成员必须是int类型
+//不支持跨平台。
+//位段的成员后边有一个冒号和一个数字。
+//eg:
+//struct A
+//{
+//	int _a : 2;
+//	int _b : 5;
+//	int _c : 10;
+//	int _d : 30;
+//};
+//
+//int main()
+//{
+//	struct A a;
+//	//8个字节
+//	printf("%d\n", sizeof(a));
+//	return 0;
+//}
+
+//struct S {
+//	char a : 3;
+//	char b : 4;
+//	char c : 5;
+//	char d : 4;
+//};
+//
+//int main()
+//{
+//	struct S s = { 0 };
+//	//3个字节
+//	printf("%d\n", sizeof(s));
+//	return 0;
+//}
