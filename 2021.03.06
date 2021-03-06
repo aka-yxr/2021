@@ -1,0 +1,189 @@
+//#define _CRT_SECURE_NO_WARNINGS
+//#include<stdio.h>
+//#include<string.h>
+//#include<assert.h>
+//#include<errno.h>
+//#include<stdlib.h>
+
+//struct stu
+//{
+//    char name[11];
+//    char tele[18];
+//    int age;
+//};
+//
+//int cmp(const void* a, const void* b)
+//{
+//    struct stu* x1 = (struct stu*)a;
+//    struct stu* x2 = (struct stu*)b;
+//    return x1->age - x2->age;
+//}
+//
+//int main()
+//{
+//    struct stu s[10];
+//    int n;
+//    scanf("%d", &n);
+//    for (int i = 0; i < n; i++)
+//    {
+//        scanf("%s %d %s", s[i].name, &s[i].age, s[i].tele);
+//    }
+//    qsort(s, n, sizeof(s[0]), cmp);
+//    for (int i = 0; i < n; i++)
+//        printf("%s %d %s\n", s[i].name, s[i].age, s[i].tele);
+//    return 0;
+//}
+
+//struct Book
+//{
+//    double price;
+//    char name[31];
+//} book;
+//
+//int main()
+//{
+//    int n;
+//    char c;
+//    scanf("%d", &n);//读取n之后缓冲区的内容："\n"
+//    struct Book book[n];
+//
+//    int i, max = 0, min = 0;
+//    for (i = 0; i < n; i++)
+//    {
+//        scanf("%c", &c);//读入缓冲区的"\n"
+//        gets(book[i].name);
+//        scanf("%lf", &book[i].price);
+//        if (book[i].price > book[max].price)
+//        {
+//            max = i;
+//        }
+//        if (book[i].price < book[min].price)
+//        {
+//            min = i;
+//        }
+//    }
+//    printf("%.2lf, %s\n", book[max].price, book[max].name);
+//    printf("%.2lf, %s\n", book[min].price, book[min].name);
+//
+//    return 0;
+//}
+
+//struct Book
+//{
+//    double price;
+//    char name[31];
+//} book;
+//
+//int comp(const void* a, const void* b)
+//{
+//    struct Book* x1 = (struct Book*)a;
+//    struct Book* x2 = (struct Book*)b;
+//
+//    return x1->price > x2->price ? 1 : -1;
+//}
+//
+//int main()
+//{
+//    int n;
+//    char c;
+//    scanf("%d", &n);//读取n之后缓冲区的内容："\n"
+//    struct Book book[n];
+//
+//    int i, max = 0, min = 0;
+//    for (i = 0; i < n; i++)
+//    {
+//        scanf("%c", &c);//读入缓冲区的"\n"
+//        gets(book[i].name);
+//        scanf("%lf", &book[i].price);
+//    }
+//
+//    qsort(book, n, sizeof(book[0]), comp);
+//
+//    printf("%.2lf, %s\n", book[n - 1].price, book[n - 1].name);
+//    printf("%.2lf, %s\n", book[0].price, book[0].name);
+//
+//    return 0;
+//}
+
+//int main()
+//{
+//    double x1, y1, x2, y2;
+//    scanf("%lf %lf %lf%lf", &x1, &y1, &x2, &y2);
+//    double x = x1 + x2;
+//    double y = y1 + y2;
+//    if ((x > -0.05) && (x < 0.0)) {  //防止输出-0.0
+//        x = 0.0;
+//    }
+//    if ((y > -0.05) && (y < 0.0)) {  //防止输出-0.0
+//        y = 0.0;
+//    }
+//    printf("(%.1f, %.1f)\n", x, y);
+//
+//    return 0;
+//}
+
+//int main()
+//{
+//    int n;//行
+//    scanf("%d", &n);
+//    char ch[1001][1001];
+//    char arr[1001];
+//
+//    getchar();
+//    gets(arr);
+//    int len = strlen(arr);
+//    int m = len / n;//列
+//    if (len % n)//字符有多余
+//        m += 1;
+//    //从右向左，应该倒着排
+//    int k = 0;
+//    for (int j = m - 1; j >= 0; j--)//行
+//    {
+//        for (int i = 0; i < n; i++)//列
+//        {
+//            if (k < len)
+//            {
+//                ch[i][j] = arr[k];
+//                k++;
+//            }
+//            else
+//            {
+//                ch[i][j] = ' ';
+//            }
+//        }
+//    }
+//
+//
+//    for (int i = 0; i < n; i++)
+//    {
+//        for (int j = 0; j < m; j++)
+//            printf("%c", ch[i][j]);
+//        printf("\n");
+//    }
+//    return 0;
+//}
+
+//int main()
+//{
+//    char ch[11];
+//    char two[11], onefour[11];
+//    int count = 1;
+//    for (count;; count++)
+//    {
+//        gets(ch);
+//        if (ch[0] == '.')
+//            break;
+//        if (count == 2)
+//            strcpy(two, ch);
+//        if (count == 14)
+//            strcpy(onefour, ch);
+//    }
+//    if (count > 14)
+//        printf("%s and %s are inviting you to dinner...\n", two, onefour);
+//    else if (count > 2)
+//        printf("%s is the only one for you...\n", two);
+//    else
+//        printf("Momo... No one is for you ...\n");
+//    return 0;
+//}
+
