@@ -1,0 +1,201 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+#include<string.h>
+#include<assert.h>
+#include<errno.h>
+#include<stdlib.h>
+#include<math.h>
+
+
+//int main()
+//{
+//    int l, n;
+//    scanf("%d%d", &l, &n);
+//    char ch[6];
+//    memset(ch, 'a', l);
+//    int forward = pow(26, l) - n;//正向数的位数.
+//    for (int i = 1; i < forward; i++)
+//    {
+//        for (int j = l-1; j >0; j--)
+//        {
+//            if (ch[j] == 'z')
+//            {
+//                ch[j - 1] += 1;
+//                ch[j ] = 'a';
+//            }
+//        }
+//        ch[l - 1] += 1;
+//    }
+//    printf("%s\n", ch);
+//
+//    return 0;
+//}
+
+
+//struct Stu
+//{
+//    char name[10];
+//    int number;
+//};
+//
+//int main()
+//{
+//    int n, sum = 0;
+//    scanf("%d", &n);
+//    struct Stu s[n];
+//    for (int i = 0; i < n; i++)
+//    {
+//        getchar();
+//        scanf("%s %d", s[i].name, &s[i].number);
+//        sum += s[i].number;
+//    }
+//    printf("%d ", sum / n / 2);
+//    int min = s[0].number;
+//    int index = 0;
+//    for (int i = 0; i < n; i++)
+//    {
+//        if (fabs(s[i].number - (sum / n / 2)) < min)
+//        {
+//            min = abs(s[i].number - (sum / n / 2));
+//            index = i;
+//        }
+//    }
+//    printf("%s\n", s[index].name);
+//
+//    return 0;
+//}
+
+//int main()
+//{
+//    int l, n;
+//    scanf("%d%d", &l, &n);
+//    char ch[6];
+//    memset(ch, 'a', l);
+//    int forward = pow(26, l) - n;//正向数的位数.
+//    for (int i = 1; i < forward; i++)
+//    {
+//        ch[l - 1] += 1;
+//        for (int j = l - 1; j > 0; j--)
+//        {
+//            if (ch[j] == 'z')
+//            {
+//                ch[j - 1] += 1;
+//                ch[j] = 'a';
+//            }
+//        }
+//
+//    }
+//    printf("%s\n", ch);
+//
+//    return 0;
+//}
+
+//struct Listnode
+//{
+//    int val;
+//    struct Listnode* next;
+//};
+//
+//struct Listnode* mergeTwoLists(struct Listnode* l1, struct Listnode* l2)
+//{
+//    if (l1 == NULL)
+//        return l2;
+//    if (l2 == NULL)
+//        return l1;
+//    if (l1->val < l2->val)
+//    {
+//        l1->next = mergeTwoLists(l1->next, l2);
+//        return l1;
+//    }
+//    else
+//    {
+//        l2->next = mergeTwoLists(l1, l2->next);
+//        return l2;
+//    }
+//
+//}
+//
+//int main()
+//{
+//    struct Listnode* s1 = (struct Listnode*)malloc(sizeof(struct Listnode));
+//    struct Listnode* s2 = (struct Listnode*)malloc(sizeof(struct Listnode));
+//
+//    int num, i = 0, j = 0;
+//    scanf("%d", &num);
+//
+//    while (num != -1)
+//    {
+//        struct Listnode* index = (struct Listnode*)malloc(sizeof(struct Listnode));
+//        index->val = num;
+//        index->next = NULL;
+//        s1->next = index;
+//        s1 = index;
+//        scanf("%d", &num);
+//        i++;
+//    }
+//    scanf("%d", &num);
+//
+//    while (num != -1)
+//    {
+//        struct Listnode* index = (struct Listnode*)malloc(sizeof(struct Listnode));
+//        index->val = num;
+//        index->next = NULL;
+//        s2->next = index;
+//        s2 = index;
+//        scanf("%d", &num);
+//
+//        j++;
+//    }
+//    struct Listnode* s3 = (struct Listnode*)malloc(sizeof(struct Listnode) * (i + j));
+//    s3 = mergeTwoLists(s1, s2);
+//
+//    while (s3->next)
+//    {
+//        printf("%d ", s3->val);
+//        s3 = s3->next;
+//    }
+//    return 0;
+//}
+
+//#include<stdio.h>
+//int main()
+//{
+//    int N, x1 = 1, x2 = 1, x, i = 0;
+//    scanf("%d", &N);
+//    if (N == 1)
+//        printf("1");
+//    else
+//    {
+//        for (i = 2; x2 < N; i++)
+//        {
+//            x = x1 + x2;
+//            x1 = x2;
+//            x2 = x;
+//        }
+//        printf("%d", i);
+//    }
+//    return 0;
+//}
+
+//int main()
+//{
+//    int h0, n;
+//    scanf("%d %d", &h0, &n);
+//    double s = h0, h;
+//    h = h0 / pow(2, n);
+//    for (int i = 1; i <= n; i++)
+//    {
+//        s += 2 * h0 / pow(2, i);
+//    }
+//    if (n == 0)
+//    {
+//        s = 0;
+//        h = 0;
+//    }
+//    else
+//    {
+//        s = s - 2 * h0 / pow(2, n);
+//    }
+//    printf("%.1f %.1f", s, h);
+//    return 0;
+//}
