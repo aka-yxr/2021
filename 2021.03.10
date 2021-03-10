@@ -1,0 +1,250 @@
+//#define _CRT_SECURE_NO_WARNINGS
+//#include<stdio.h>
+//#include<string.h>
+//#include<assert.h>
+//#include<errno.h>
+//#include<stdlib.h>
+//#include<math.h>
+
+//int main()
+//{
+//    int n, lottery;
+//    scanf("%d", &n);
+//    for (int i = 0; i < n; i++)
+//    {
+//        //getchar();
+//        scanf("%d", &lottery);
+//        int front = 0, later = 0;
+//        for (int j = 0; j < 3; j++)
+//        {
+//            later += lottery % 10;
+//            lottery /= 10;
+//        }
+//        for (int k = 0; k < 3; k++)
+//        {
+//            front += lottery % 10;
+//            lottery /= 10;
+//        }
+//
+//        if (front == later)
+//            printf("You are lucky!\n");
+//        else
+//            printf("Wish you good luck.\n");
+//    }
+//
+//    return 0;
+//}
+
+//int main()
+//{
+//    int Pa, Pb, P1, P2, P3, sum;
+//    scanf("%d %d", &Pa, &Pb);
+//    scanf("%d %d %d", &P1, &P2, &P3);
+//    sum = P1 + P2 + P3;
+//    if (Pa > Pb && sum != 3)
+//        printf("The winner is a: %d + %d", Pa, 3 - sum);
+//    else
+//        printf("The winner is b: %d + %d", Pb, sum);
+//    return 0;
+//}
+
+//int main()
+//{
+//    char str[1001] = { 0 };
+//    gets(str);
+//    int len = strlen(str);
+//    int front = 0, later = 0;
+//    for (int i = 0; i < len; i++)
+//    {
+//        if (str[i] == '6')
+//        {
+//            later++;
+//        }
+//        else
+//        {
+//            if (later >= 9)
+//                printf("27");
+//            else if (later > 3)
+//                printf("9");
+//            else
+//            {
+//                while (later--)
+//                    printf("6");
+//            }
+//            later = 0;
+//            printf("%c", str[i]);
+//        }
+//    }
+//
+//    return 0;
+//}
+
+//int main()
+//{
+//    int n, comma = 0, period = 0;
+//    char str[101];
+//    scanf("%d", &n);
+//    getchar();
+//    for (int i = 0; i < n; i++)
+//    {
+//        gets(str);
+//        int len = strlen(str);
+//        //getchar();
+//        //comma=strchr(str,',');
+//        //period=strchr(str,'.');
+//        int front = 0, later = 0, index = 0;
+//        while (str[index] != '\0')
+//        {
+//            if (str[index] == ',' && str[index - 1] == 'g' && str[index - 2] == 'n' && str[index - 3] == 'o')
+//                front = 1;
+//            if (str[index] == '.' && str[index - 1] == 'g' && str[index - 2] == 'n' && str[index - 3] == 'o')
+//                later = 1;
+//            index++;
+//        }
+//        if (front && later)
+//        {
+//            int sum = 0, k = 0;
+//            for (int j = len - 1; sum != 3; j--)
+//            {
+//                if (str[j] == ' ')
+//                    sum++;
+//                k = j;
+//            }
+//            for (int x = 0; x < len; x++)
+//            {
+//                if (x == (k + 1))
+//                {
+//                    printf("qiao ben zhong.\n");
+//                    break;
+//                }
+//                else
+//                    printf("%c", str[x]);
+//            }
+//        }
+//        else
+//            printf("Skipped\n");
+//    }
+//    return 0;
+//}
+
+//#define num 5
+//#define len 80
+//
+//int main()
+//{
+//    char str[num][len];
+//    char tmp[len];
+//    int i, j;
+//
+//    for (i = 0; i < num; i++)
+//    {
+//        scanf("%s", &str[i]);
+//    }
+//    for (i = 1; i < num; i++)
+//    {
+//        for (j = 0; j < num - i; j++)
+//        {
+//            if (strcmp(str[j], str[j + 1]) > 0)
+//            {
+//                strcpy(tmp, str[j]);
+//                strcpy(str[j], str[j + 1]);
+//                strcpy(str[j + 1], tmp);
+//            }
+//        }
+//    }
+//    printf("After sorted:\n");
+//    for (i = 0; i < num; i++)
+//    {
+//        printf("%s\n", str[i]);
+//    }
+//    return 0;
+//}
+
+//int main()
+//{
+//    char c;
+//    int n;
+//    scanf("%d %c", &n, &c);
+//    int x = sqrt((n + 1) / 2);
+//    for (int i = x; i > 0; i--)//行
+//    {
+//        for (int j = i; j < x; j++)//空格
+//        {
+//            printf(" ");
+//        }
+//        for (int k = 0; k < 2 * i - 1; k++)//符号
+//        {
+//            printf("%c", c);
+//        }
+//        printf("\n");
+//    }
+//    for (int i = 2; i <= x; i++)//行
+//    {
+//        for (int j = i; j <=x - 1; j++)//空格
+//            printf(" ");
+//        for (int k = 0; k < 2 * i - 1; k++)//符号
+//            printf("%c", c);
+//        printf("\n");
+//    }
+//    printf("%d\n", ((n + 1) - (2*x * x)));
+//
+//    return 0;
+//}
+
+
+//int main()
+//{
+//    int n, m;
+//    scanf("%d%d", &n, &m);
+//    int conclusion = pow(2, n);//总共有这么多结论
+//    char str[31] = { 0 };
+//    //如果选否，结论就会向后偏移。
+//    //比如，如果第一次选否，答案只有 在 conclusion的后半段，
+//    //再如，第一次选是，第二次选否，那么结论只能在conclusion前半段中的后半段
+//    //问题越往下，偏移的就越小。越往上偏移的就越多。
+//
+//    for (int i = 0; i < m; i++)
+//    {
+//        int var = conclusion;
+//        int num = 1;
+//        scanf("%s", str);
+//        getchar();
+//        for (int j = 0; j < strlen(str); j++)
+//        {
+//            if (str[j] == 'n')
+//                num += (var / 2);
+//            var /= 2;
+//        }
+//        printf("%d\n", num);
+//    }
+//
+//    return 0;
+//}
+
+//int main()
+//{
+//    char str[81];
+//    gets(str);
+//    int count = 1;
+//    int frist = 0;//第一次出现
+//    int appear = 0;//出现次数
+//    if (str[0] == '.')
+//    {
+//        printf("1\n");
+//        printf("-_-#\n");
+//    }
+//    while (str[0] != '.')
+//    {
+//
+//        if (strstr(str, "chi1 huo3 guo1"))
+//        {
+//            appear++;
+//            if (frist == 0)
+//                frist = count;
+//        }
+//        gets(str);
+//        count++;
+//    }
+//
+//    return 0;
+//}
