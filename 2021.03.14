@@ -1,0 +1,253 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+#include<string.h>
+#include<assert.h>
+#include<errno.h>
+#include<stdlib.h>
+#include<math.h>
+
+
+//List MakeEmpty()
+//{
+//    List L = (List)malloc(sizeof(List));
+//    L->Next = NULL;
+//    return L;
+//}
+//
+//Position Find(List L, ElementType X)
+//{
+//    L = L->Next;
+//    while (L)
+//    {
+//        if (L->Data == X)
+//        {
+//            return L;
+//        }
+//        L = L->Next;
+//    }
+//    return ERROR;
+//}
+//
+//bool Insert(List L, ElementType X, Position P)
+//{
+//    List p = (List)malloc(sizeof(List));
+//    p->Data = X;
+//    p->Next = NULL;
+//    List k = L;
+//    while (k)
+//    {
+//        if (k->Next == P)
+//        {
+//            p->Next = P;
+//            k->Next = p;
+//            return true;
+//        }
+//        k = k->Next;
+//    }
+//    printf("Wrong Position for Insertion\n");
+//    return false;
+//}
+//
+//bool Delete(List L, Position P)
+//{
+//    if (L == P)
+//    {
+//        L = L->Next;
+//        return true;
+//    }
+//    while (L)
+//    {
+//        if (L->Next == P)
+//        {
+//            L->Next = P->Next;
+//            return true;
+//        }
+//        L = L->Next;
+//    }
+//    printf("Wrong Position for Deletion\n");
+//    return false;
+//}
+
+
+//typedef struct LNode
+//{
+//    int data;
+//    struct LNode* next;
+//}LNode, * LinkList;
+//
+//LinkList Creat_List();
+//void Travel(LinkList H);
+//LinkList Combine_List(LinkList A, LinkList B);
+//
+//int main()
+//{
+//    LinkList A, B, C;
+//    A = Creat_List();
+//    B = Creat_List();
+//    C = Combine_List(A, B);
+//
+//    Travel(C);
+//    return 0;
+//}
+//void Travel(LinkList H)
+//{
+//    if (H->next)
+//    {
+//        LinkList p;
+//        p = H->next;
+//        while (p)
+//        {
+//            printf("%d", p->data);
+//            if (p->next != NULL) printf(" ");
+//            p = p->next;
+//        }
+//        printf("\n");
+//    }
+//    else
+//        printf("NULL");
+//}
+//
+//LinkList Creat_List()
+//{
+//    LinkList H, p, q;
+//    int x;
+//    H = (LNode*)malloc(sizeof(LNode));
+//    H->next = NULL;
+//    q = H;
+//    while (scanf("%d", &x) && x != -1) {
+//        LinkList p;
+//        p = (LNode*)malloc(sizeof(LNode));
+//        p->next = NULL;
+//        p->data = x;
+//        q->next = p;
+//        q = p;
+//    }
+//    return H;
+//}
+//
+//LinkList Combine_List(LinkList A, LinkList B)
+//{
+//    LinkList C, p;
+//    C = (LNode*)malloc(sizeof(LNode));
+//    C->next = NULL;
+//    p = C;
+//    A = A->next;
+//    B = B->next;
+//    while (A && B)
+//    {
+//        if (A->data > B->data)
+//        {
+//            p->next = B;
+//            B = B->next;
+//            p = p->next;
+//        }
+//        else
+//        {
+//            p->next = A;
+//            A = A->next;
+//            p = p->next;
+//        }
+//    }
+//    if (A)
+//        p->next = A;
+//    if (B)
+//        p->next = B;
+//
+//    return C;
+//}
+
+//int main()
+//{
+//    char a[100], b[100];
+//    int numa = 0, numb = 0;
+//    scanf("%s ", a);
+//    gets(b);
+//    int lena = strlen(a), lenb = strlen(b);
+//    for (int i = 0; i < lena; i++)
+//    {
+//        if (isdigit(a[i]))
+//            numa = numa * 10 + a[i] - '0';
+//        else
+//            numa = -1;
+//    }
+//    for (int i = 0; i < lenb; i++)
+//    {
+//        if (isdigit(b[i]))
+//            numb = numb * 10 + b[i] - '0';
+//        else
+//            numb = -1;
+//    }
+//    if (numa > 1000 || numa < 1)
+//        numa = -1;
+//    if (numb > 1000 || numb < 1)
+//        numb = -1;
+//    if (numa != -1 && numb != -1)
+//        printf("%d + %d = %d", numa, numb, numa + numb);
+//    else if (numa == -1 && numb != -1)
+//        printf("? + %d = ?", numb);
+//    else if (numa != -1 && numb == -1)
+//        printf("%d + ? = ?", numa);
+//    else if (numa == -1 && numb == -1)
+//        printf("? + ? = ?");
+//
+//    return 0;
+//}
+
+//int main()
+//{
+//    char number[52] = { 0 };
+//    gets(number);
+//    double minus = 1.0, even = 1.0;
+//    int len = strlen(number);
+//    int flag = 0, count = 0;
+//    if (number[0] == '-')
+//    {
+//        minus = 1.5;
+//        flag = 1;
+//    }
+//    if ((number[len - 1] - '0') % 2 == 0)
+//        even = 2.0;
+//    for (int i = 0; i < len; i++)
+//    {
+//        if (number[i] == '2')
+//            count++;
+//    }
+//    double sum = minus * even * count;
+//    if (!flag)
+//        printf("%.2f", sum / len*100);
+//    else
+//        printf("%.2f", sum / (len - 1)*100);
+//    printf("%\n");
+//    return 0;
+//}
+
+//int Prime(int x)
+//{
+//    if (x < 2)
+//        return -1;
+//    if (x == 2)
+//        return 1;
+//    for (int k = 2; k < x / 2 + 1; k++)
+//    {
+//        if (x % k == 0)
+//            return -1;
+//    }
+//    return 1;
+//}
+//
+//int main()
+//{
+//    int n, num = 0;
+//    scanf("%d", &n);
+//    for (int i = 0; i < n; i++)
+//    {
+//        scanf("%d", &num);
+//        if (Prime(num))
+//            printf("Yes\n");
+//        else
+//            printf("No\n");
+//
+//    }
+//
+//    return 0;
+//}
