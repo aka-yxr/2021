@@ -1,0 +1,270 @@
+#define _CRT_SECURE_NO_WARNINGS
+//#include<stdio.h>
+//#include<string.h>
+//#include<assert.h>
+//#include<errno.h>
+//#include<stdlib.h>
+//#include<math.h>
+//
+//int main()
+//{
+//    printf("Talk is cheap. Show me the code.\n");
+//}
+//
+//int main()
+//{
+//    int chang, kuan, height;
+//    scanf("%d%d%d", &chang, &kuan, &height);
+//    int V = chang * kuan * height;
+//    printf("%d\n", V);
+//
+//    return 0;
+//}
+//
+//int main()
+//{
+//    double p, v;
+//    int b;
+//    scanf("%lf %d %lf", &p, &b, &v);
+//    double bei;
+//    if (b == 0)
+//        bei = 2.455;
+//    else if (b == 1)
+//        bei = 1.26;
+//    double num = p * bei;
+//    printf("%.2f ", num);
+//    if (num >= v)
+//        printf("T_T\n");
+//    else
+//        printf("^_^\n");
+//
+//}
+//
+//int main()
+//{
+//    int n;
+//    scanf("%d", &n);
+//    double num, sum = 0;
+//    int i = 0;
+//    for (i = 0; i < n; i++)
+//    {
+//        scanf("%lf", &num);
+//        sum += 1.0 / num;
+//    }
+//    sum /= n;
+//    printf("%.2f\n", 1.0 / sum);
+//}
+//
+//int main()
+//{
+//    int num[4] = { 0 };
+//    int min, fa;
+//    for (int i = 0; i < 4; i++)
+//        scanf("%d ", &num[i]);
+//    scanf("%d %d", &min, &fa);
+//    int max = num[0];
+//    int count = 0, flag = 0;
+//    for (int i = 0; i < 4; i++)
+//    {
+//        if (max < num[i])
+//            max = num[i];
+//        if (num[i] < min)
+//        {
+//            count++;
+//            flag = i + 1;
+//        }
+//    }
+//
+//    for (int i = 0; i < 4; i++)
+//    {
+//        int tmp = max - num[i];
+//        if (tmp > fa)
+//        {
+//            count++;
+//            flag = i + 1;
+//        }
+//    }
+//    if (count == 0)
+//        printf("Normal\n");
+//    if (count == 1)
+//        printf("Warning: please check #%d!\n", flag);
+//    if (count > 1)
+//        printf("Warning: please check all the tires!\n");
+//}
+//
+//int main()
+//{
+//    char str[81];
+//    int k = 0, first = 0, allnum = 0;
+//    while (1)
+//    {
+//        gets(str);
+//        if (str[0] == '.')
+//            break;
+//        k++;
+//        if (strstr(str, "chi1 huo3 guo1"))
+//        {
+//            allnum++;
+//            if (allnum == 1)
+//                first = k;
+//        }
+//    }
+//    printf("%d\n", k);
+//    if (allnum)
+//        printf("%d %d\n", first, allnum);
+//    else
+//        printf("-_-#\n");
+//}
+//
+//int main()
+//{
+//    int n, m;
+//    char str[101];
+//    scanf("%d%d", &n, &m);
+//    int allnum = pow(2, n);
+//    int choose = 0;
+//    for (int i = 0; i < m; i++)
+//    {
+//        scanf("%s", str);
+//        int len = strlen(str);
+//        choose = 0;
+//        int allnumber = allnum;
+//        for (int j = 0; j < len; j++)
+//        {
+//            if (str[j] == 'n')
+//            {
+//                choose += allnumber / 2;
+//
+//            }
+//            allnumber /= 2;
+//        }
+//        printf("%d\n", choose + 1);
+//    }
+//
+//}
+//
+//int main()
+//{
+//    int num[3][3];
+//    int sum = 0, i1 = 0, j1 = 0;
+//    for (int i = 0; i < 3; i++)
+//    {
+//        for (int j = 0; j < 3; j++)
+//        {
+//            scanf("%d", &num[i][j]);
+//            sum += num[i][j];
+//            if (num[i][j] == 0)
+//            {
+//                i1 = i;
+//                j1 = j;
+//            }
+//        }
+//    }
+//    num[i1][j1] = 45 - sum;
+//    int x, y;
+//    for (int i = 0; i < 3; i++)
+//    {
+//        scanf("%d%d", &x, &y);
+//        printf("%d\n", num[x - 1][y - 1]);
+//    }
+//    int postion = 0, money = 0;
+//    scanf("%d", &postion);
+//    if (postion == 1)
+//        money += num[0][0] + num[0][1] + num[0][2];
+//    if (postion == 2)
+//        money += num[1][0] + num[1][1] + num[1][2];
+//    if (postion == 3)
+//        money += num[2][0] + num[2][1] + num[2][2];
+//    if (postion == 4)
+//        money += num[0][0] + num[1][0] + num[2][0];
+//    if (postion == 5)
+//        money += num[0][1] + num[1][1] + num[2][1];
+//    if (postion == 6)
+//        money += num[0][2] + num[1][2] + num[2][2];
+//    if (postion == 7)
+//        money += num[0][0] + num[1][1] + num[2][2];
+//    if (postion == 8)
+//        money += num[0][2] + num[1][1] + num[2][0];
+//    switch (money)
+//    {
+//    case 6:printf("10000\n"); break;
+//    case 7:printf("36\n"); break;
+//    case 8:printf("720\n"); break;
+//    case 9:printf("360\n"); break;
+//    case 10:printf("80\n"); break;
+//    case 11:printf("252\n"); break;
+//    case 12:printf("108\n"); break;
+//    case 13:printf("72\n"); break;
+//    case 14:printf("54\n"); break;
+//    case 15:printf("180\n"); break;
+//    case 16:printf("72\n"); break;
+//    case 17:printf("180\n"); break;
+//    case 18:printf("119\n"); break;
+//    case 19:printf("36\n"); break;
+//    case 20:printf("306\n"); break;
+//    case 21:printf("1080\n"); break;
+//    case 22:printf("144\n"); break;
+//    case 23:printf("1800\n"); break;
+//    case 24:printf("3600\n"); break;
+//
+//    }
+//}
+//
+//#define Max 1001
+//
+//typedef struct Z
+//{
+//    int num[Max];
+//    int top;
+//};
+//
+//struct Z1
+//{
+//    char op[Max];
+//    int top;
+//};
+//
+//int main()
+//{
+//    struct Z n;
+//    struct Z1 o;
+//    int N;
+//    scanf("%d", &N);
+//    for (int i = 0; i < N; i++)
+//    {
+//        scanf("%d", &n.num[i]);
+//    }
+//    n.top = N - 1;
+//    for (int i = 0; i < N - 1; i++)
+//    {
+//        scanf(" %c", &o.op[i]);
+//    }
+//    //int k = o.top=N-2;
+//    int tmp = n.num[n.top];
+//    int flag = 0;
+//    for (int i = n.top - 1; i >= 0; i--)
+//    {
+//        if (o.op[i] == '+')
+//            tmp += n.num[i];
+//        if (o.op[i] == '-')
+//            tmp = n.num[i] - tmp;
+//        if (o.op[i] == '*')
+//            tmp = n.num[i] * tmp;
+//        if (o.op[i] == '/')
+//        {
+//            if (tmp == 0)
+//            {
+//                printf("ERROR: %d/0\n", n.num[i]);
+//                flag = 1;
+//            }
+//            else
+//                tmp = n.num[i] / tmp;
+//        }
+//
+//    }
+//
+//    if (!flag)
+//        printf("%d\n", tmp);
+//
+//    return 0;
+//}
