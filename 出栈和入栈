@@ -1,0 +1,206 @@
+//#define _CRT_SECURE_NO_WARNINGS
+//#include<stdio.h>
+//#include<string.h>
+//#include<assert.h>
+//#include<errno.h>
+//#include<stdlib.h>
+//#include<stdbool.h>
+//#include<math.h>
+
+//typedef int postion;
+//typedef struct SNode* Stack;
+//struct  SNode
+//{
+//	postion* Date;
+//	postion top;
+//	postion maxsize;
+//};
+//
+////生成空栈 .
+//Stack CreateStack(postion maxsize)
+//{
+//	Stack S = (Stack)malloc(sizeof(struct SNode));
+//	S->Date = (postion*)malloc(maxsize * sizeof(postion));
+//	S->top = -1;
+//	S->maxsize = maxsize;
+//	return S;
+//
+//}
+////判断栈有没有满
+//bool IsFull(Stack S)
+//{
+//	assert(S);
+//	return  (S->top == S->maxsize - 1);
+//}
+//
+////将X入栈
+//bool Push(Stack S, postion X)
+//{
+//	assert(S);
+//	if (IsFull(S))
+//	{
+//		printf("Full\n");
+//		return false;
+//	}
+//	else
+//	{
+//
+//		S->Date[++(S->top)] = X;
+//		return true;
+//
+//	}
+//
+//
+//}
+//
+////判断栈是否为空
+//bool  Isempty(Stack S)
+//{
+//	assert(S);
+//	return (S->top == -1);
+//
+//
+//}
+//
+////删除并返回栈顶元素
+//postion Pop(Stack S)
+//{
+//	assert(S);
+//	if (Isempty(S))
+//	{
+//		printf("空\n");
+//		return -1;
+//	}
+//	//S->top=S->top-1;
+//	return S->Date[(S->top)--];
+//
+//}
+//
+////释放
+//void Free(Stack S)
+//{
+//	if (!S)
+//		return;
+//	if (S->Date)
+//		free(S->Date);
+//	free(S);
+//}
+//
+//void Print(const Stack S)
+//{
+//	for (int i = 0; i < S->top + 1; i++)
+//	{
+//		printf("%d ", S->Date[i]);
+//	}
+//
+//
+//}
+//
+//int main()
+//{
+//	Stack S = CreateStack(5);
+//
+//	Push(S, 22);
+//	Push(S, 33);
+//	Push(S, 44);
+//	Push(S, 55);
+//	Push(S, 66);
+//	Print(S);
+//	printf("\n");
+//	printf("%d\n", Pop(S));
+//	printf("%d\n", Pop(S));
+//	printf("%d\n", Pop(S));
+//	printf("%d\n", Pop(S));
+//
+//
+//
+//	Free(S);
+//	return 0;
+//}
+
+
+
+//#define MaxSize 1001
+//typedef int Postion;
+//
+//struct customer
+//{
+//    Postion data[MaxSize];
+//    Postion top;
+//};
+//
+////空队
+//struct customer* CreateQ()
+//{
+//    struct customer* Queue;
+//    Queue = (struct customer*)malloc(sizeof(struct customer));
+//    Queue->top = -1;
+//    return Queue;
+//}
+//
+////入队
+//void Push(struct customer* Queue, Postion x)
+//{
+//    Queue->data[++Queue->top] = x;
+//}
+//
+////出队
+//int PopQueue(struct customer* Queue)
+//{
+//    if (Queue->top == -1)
+//        return -1;
+//    return Queue->data[Queue->top--];
+//}
+//
+//
+//int main()
+//{
+//    int n, num[MaxSize];
+//    int i = 0, k = 0;
+//    struct customer* Queue1, * Queue2;
+//    Queue1 = CreateQ();
+//    Queue2 = CreateQ();
+//    scanf("%d", &n);
+//
+//    for (k = 1; k <= n; k++)
+//    {
+//        scanf("%d", &num[k]);
+//    }
+//
+//    for (i = n; i >= 1; i--)
+//    {
+//        if (num[i] % 2 == 1)
+//            Push(Queue1, num[i]);
+//        else
+//            Push(Queue2, num[i]);
+//    }
+//
+//    int time = 0, count = 0;
+//    for (time = 1; Queue1->top != -1 || Queue2->top != -1; time++)
+//    {
+//        int tmp = PopQueue(Queue1);
+//        if (tmp != -1)
+//        {
+//            if (count != 0)
+//                printf(" ");
+//            else
+//                count = 1;
+//            printf("%d", tmp);
+//        }
+//
+//        if (time % 2 == 0)
+//        {
+//            tmp = PopQueue(Queue2);
+//            if (tmp != -1)
+//            {
+//                if (count != 0)
+//                    printf(" ");
+//                else
+//                    count = 1;
+//                printf("%d", tmp);
+//            }
+//        }
+//    }
+//
+//    return 0;
+//}
