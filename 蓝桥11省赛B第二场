@@ -1,0 +1,429 @@
+//#define _CRT_SECURE_NO_WARNINGS
+//#include<stdio.h>
+//#include<string.h>
+//#include<assert.h>
+//#include<errno.h>
+//#include<stdlib.h>
+//#include<stdbool.h>
+//#include<math.h>
+
+//A
+//int main()
+//{
+//	int num = 0;
+//	int i = 1, k = 0;
+//	int str[4] = { 0 };
+//	int sum = 0;
+//	for (i = 1; i <= 2020; i++)
+//	{
+//		k = 0;
+//		num = i;
+//		while (num)
+//		{
+//			str[k] = num % 10;
+//			num /= 10;
+//			k++;
+//		}
+//		for (int j = 0; j < k; j++)
+//		{
+//			if (str[j] == 2)
+//			{
+//				sum++;
+//			}
+//		}
+//	}
+//	printf("%d\n", sum);
+//}
+////624
+
+//struct People
+//{
+//    int id;
+//    int flag;
+//};
+//
+//int main()
+//{
+//    int n, k, m;
+//    struct People s[10001];
+//    int all[100000];
+//    int num[10001];
+//    scanf("%d", &n);
+//    int alli = 0, numi = 0;
+//
+//    for (int i = 0; i < n; i++)//输入
+//    {
+//        scanf("%d", &k);
+//        for (int j = 0; j < k; j++)
+//        {
+//            scanf("%d ", &all[alli]);
+//            alli++;
+//        }
+//    }
+//    scanf("%d", &m);
+//    for (int i = 0; i < m; i++)
+//    {
+//        scanf("%d", &s[numi].id);
+//        s[numi].flag = 0;
+//        numi++;
+//    }
+//
+//    for (int i = 0; i < numi; i++)
+//    {
+//        for (int j = 0; j < alli; j++)
+//        {
+//            if (s[i].id != all[j])
+//            {
+//                s[i].flag = 1;
+//            }
+//        }
+//    }
+//
+//    //numi=0;
+//    int kx = 0;
+//    for (int i = 0; i < numi; i++)
+//    {
+//        if (s[i].flag)
+//        {
+//            num[k] = s[i].id;
+//            kx++;
+//        }
+//    }
+//    if (kx)
+//    {
+//        for (int i = 0; i < kx - 1; i++)
+//            printf("%d ", num[i]);
+//        printf("%d", num[kx - 1]);
+//    }
+//    else
+//        printf("No one is handsome\n");
+//
+//    return 0;
+//}
+// 
+
+
+
+
+// B
+//int gcd(int a, int b)
+//{
+//	if (b == 0)
+//		return a;
+//	else
+//		return gcd(b, a % b);
+//}
+//
+//int main()
+//{
+//	
+//	int count = 0;
+//	for (int i = 1; i <= 2020; i++)
+//	{
+//		for (int j = 1; j <= 2020; j++)
+//		{
+//			if (gcd(i,j) == 1)
+//				count++;
+//		}
+//	}
+//	printf("%d\n", count);
+//
+//	return 0;
+//}
+
+
+
+//int main()
+//{
+//    int n, k;
+//    int num[1002] = { 0 };
+//    scanf("%d", &n);
+//    for (int i = 0; i < n; i++)
+//    {
+//        getchar();
+//        scanf("%d", &k);
+//        for (int j = 0; j < k; j++)
+//        {
+//            int tmp;
+//            scanf("%d", &tmp);
+//            num[tmp]++;
+//        }
+//    }
+//    //找出现次数最多的特性标签，并记住下标。
+//    int sub = 0;
+//    int max = num[0];
+//    for (int i = 1; i < 1002; i++)
+//    {
+//        if (num[i] >= max)
+//        {
+//            max = num[i];
+//            sub = i;
+//        }
+//    }
+//    printf("%d %d\n", sub, num[sub]);
+//
+//    return 0;
+//}
+
+//int main()
+//{
+//    int k;
+//    scanf("%d", &k);
+//    getchar();
+//    int count = 0;
+//    for (int i = 0;; i++)
+//    {
+//        char arr[15];
+//        gets(arr);
+//        if (strcmp(arr, "End") == 0)
+//            break;
+//        count++;
+//        if (count == k+1)
+//        {
+//            count -= k+1;
+//            puts(arr);
+//        }
+//        else
+//        {
+//            if (strcmp(arr, "JianDao") == 0)
+//                puts("ChuiZi");
+//            else if (strcmp(arr, "ChuiZi") == 0)
+//                puts("Bu");
+//            else
+//                puts("JianDao");
+//        }
+//    }
+//}
+
+
+
+//C
+//int main()
+//{
+//	int sum = 1;
+//	int num[100][100];
+//	int i = 0, j = 0;
+//	int x, y;
+//	for (i = 1; i <= 50; i++)
+//	{
+//		if (i % 2 == 1)
+//		{
+//			for (x = i, y = 1; x >= 1 && y <= i; x--, y++)
+//			{
+//				num[x][y] = sum++;
+//			}
+//		}
+//		else
+//		{
+//			for (x = 1, y = i; x <= i&&y >= 1; x++, y--)
+//				num[x][y] = sum++;
+//
+//		}
+//		
+//	}
+//	printf("num[20][20] = %d", num[20][20]);
+//
+//}
+
+
+//D
+//int main()
+//{
+//	int km = 0;
+//	int year, day, week=6;
+//	int month1[] = { 31,28,31,30,31,30,31,31,30,31,30,31 };
+//	int month2[] = { 31,29,31,30,31,30,31,31,30,31,30,31 };
+//	for (year = 2000; year <= 2020; year++)
+//	{
+//		if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0)
+//		{
+//			if (year == 2020)
+//			{
+//				for (int i = 0; i < 9; i++)
+//				{
+//					for (day = 1; day <= month2[i]; day++, week++)
+//					{
+//						if (day == 1 || week % 7 == 1)
+//						{
+//							km += 2;
+//						}
+//						else
+//							km += 1;
+//					}
+//				}
+//				km += 2;
+//			}
+//			else
+//			{
+//				for (int i = 0; i < 12; i++)
+//				{
+//					for (day = 1; day <= month2[i]; day++, week++)
+//					{
+//						if (day == 1 || week % 7 == 1)
+//						{
+//							km += 2;
+//						}
+//						else
+//							km += 1;
+//					}
+//				}
+//			}
+//		}
+//		else
+//		{
+//			for (int i = 0; i < 12; i++)
+//			{
+//				for (day = 1; day <= month1[i]; day++, week++)
+//				{
+//					if (day == 1 || week % 7 == 1)
+//					{
+//						km += 2;
+//					}
+//					else
+//						km += 1;
+//				}
+//			}
+//		}
+//	}
+//	printf("km = %d\n", km);
+//
+//	return 0;
+//}
+
+
+//E
+
+
+
+
+//F
+//int main()
+//{
+//	int n;
+//	int num[10001] = { 0 };
+//	scanf("%d", &n);
+//	//getchar();
+//	int i = 0;
+//	double good = 0, best = 0;
+//	for (i = 0; i < n; i++)
+//	{
+//		scanf("%d", &num[i]);
+//		if (num[i] >= 85)
+//		{
+//			best++;
+//			good++;
+//		}
+//		else if (num[i] >= 60)
+//			good++;
+//	}
+//	good = (good )*1.0 / n;
+//	best = (best)*1.0 / n;
+//	printf("%.0f%%", good*100);
+//	printf("\n");
+//	printf("%.0f%%", best * 100);
+//	printf("\n");
+//
+//	return 0;
+//}
+
+
+
+//G
+//int main()
+//{
+//	int num[10] = { 0 };
+//	int date;
+//	scanf("%d", &date);
+//	int i = 0, k = 0;
+//	int count = 0;
+//	for (i = date+1;; i++)
+//	{
+//		if (count == 2)
+//			break;
+//		int n = i;
+//		k = 0;
+//		while (n)
+//		{
+//			num[k++] = n % 10;
+//			n /= 10;
+//		}
+//		int j = 0,m = 1;
+//		for (j= 0; j < k; j++)
+//		{
+//			if ((num[0] == num[2] && num[2] == num[5] && num[5] == num[7]) && (num[1] == num[3] && num[3] == num[4] && num[4] == num[6]))
+//			{
+//				printf("%d\n", i);
+//				count++;
+//				break;
+//			}
+//			if (num[j] != num[k - 1 - j])
+//			{
+//				m = 0;
+//				break;
+//			}
+//		}
+//		
+//		if (m == 1&&count==0)
+//		{
+//			printf("%d\n", i);
+//			count++;
+//		}
+//
+//	}
+//
+//	return 0;
+//}
+
+
+//#include <stdio.h>
+//#include <stdlib.h>
+//#include<string.h>
+//
+//int main(int argc, char* argv[])
+//{
+//    // 请在此输入您的代码
+//    char str[1001];
+//    char zm[26] = { 'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z' };
+//    gets(str);
+//    int len = strlen(str);
+//    int num[26] = { 0 };
+//    int i = 0, j = 0;
+//    for (i = 0; i < len; i++)
+//    {
+//        int tmp = str[i] - 'a';
+//        num[tmp]++;
+//    }
+//    intB max = num[0], maxi = 0;
+//    for (j = 1; j < 26; j++)
+//    {
+//        if (max < num[j])
+//        {
+//            max = num[j];
+//            maxi = j;
+//        }
+//    }
+//    printf("%c\n", zm[maxi]);
+//    printf("%d\n", num[maxi]);
+//
+//    return 0;
+//}
+
+//int main()
+//{
+//	int year;
+//	int num[10] = { 0 };
+//	char zm[] = { '0','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z' };
+//	scanf("%d", &year);
+//	int n = year;
+//	int i = 0;
+//	while (year)
+//	{
+//		num[i++] = year % 26;
+//		year /= 26;
+//	}
+//	for (int j = 0; j < i; j++)
+//		printf("%c", zm[num[i - 1-j]]);
+//
+//}
+
+
