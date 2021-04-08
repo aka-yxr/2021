@@ -1,0 +1,192 @@
+//#define _CRT_SECURE_NO_WARNINGS
+//#include<stdio.h>
+//#include<string.h>
+//#include<assert.h>
+//#include<errno.h>
+//#include<stdlib.h>
+//#include<stdbool.h>
+//#include<math.h>
+//
+////顺序表
+////#define MaxSize 20
+////#define OK 1
+////#define ERROR 0
+////#define TRUE 1
+////#define FALSE 0
+////typedef int ElemType;
+////
+////typedef struct {
+////	ElemType data[MaxSize];
+////	int length;
+////}SqList;
+////
+////
+//////获得元素,并没有改变顺序表内的任何值
+////ElemType GetElem(SqList L, int i, ElemType* e)
+////{
+////	if (L.length == 0 || i<1 || i>L.length)
+////		return ERROR;
+////	*e = L.data[i - 1];
+////	return OK;
+////}
+////
+//////在第i个位置之前添加一个元素e.
+//////这里用SqList* 类型是因为要改变顺序表内的值.
+////ElemType ListInsert(SqList* L, int i, ElemType e)
+////{
+////	if (L->length == MaxSize)//顺序表满
+////		return ERROR;
+////	if (i<1 || i>L->length+1)//i不在范围内
+////		return ERROR;
+////	if (i <= L->length)
+////	{
+////		for (int k = L->length - 1; k >= i - 1; k--)
+////		{
+////			L->data[k + 1] = L->data[k];
+////		}
+////	}
+////	L->data[i - 1] = e;
+////	L->length++;
+////	return OK;
+////}
+////
+//////删除第i个数据元素，并用e返回其值
+////ElemType ListDelete(SqList* L, int i, ElemType* e)
+////{
+////	if (L->length == 0)
+////		return ERROR;
+////	if (i<1 || i>L->length)
+////		return ERROR;
+////	*e = L->data[i - 1];
+////	if (i < L->length)
+////	{
+////		for (int k = i; k < L->length; k++)
+////		{
+////			L->data[k - 1] = L->data[k];
+////		}
+////	}
+////	L->length--;
+////	return OK;
+////}
+//
+//
+////链表
+//typedef int ElemType;
+//#define OK 1
+//#define ERROR 0
+//#define TRUE 1
+//#define FALSE 0
+//
+//typedef struct Node {
+//	ElemType data;
+//	struct Node* next;
+//}Node;
+//typedef struct Node* LinkList;
+//
+////创建链表--头插法
+//void CreatListHead(LinkList* L, int n)
+//{
+//	LinkList p = NULL;
+//	int i = 0;
+//	srand(time(0));
+//	*L = (LinkList)malloc(sizeof(Node));
+//	(*L)->next = NULL;
+//	for (i = 0; i < n; i++)
+//	{
+//		p = (LinkList)malloc(sizeof(Node));
+//		p->data = rand() % 100 + 1;
+//		p->next = (*L)->next;
+//		(*L)->next = p;
+//	}
+//}
+//
+//
+////尾插法
+//void CreatListTail(LinkList* L, int n)
+//{
+//	LinkList p, r;
+//	int i = 0;
+//	srand(time(0));
+//	*L = (LinkList)malloc(sizeof(Node));
+//	r = *L;
+//	for (i = 0; i < n; i++)
+//	{
+//		p = (Node*)malloc(sizeof(Node));
+//		p->data = rand() % 100 + 1;
+//		r->next = p;
+//		r = p;
+//	}
+//	r->next = NULL;
+//}
+//
+////获取元素
+//ElemType GetElem(LinkList L, int i, ElemType* e)
+//{
+//	LinkList p;
+//	p = L->next;
+//	int j = 1;
+//	while (p && j < i)
+//	{
+//		p = p->next;
+//		j++;
+//	}
+//	if (!p || j > i)//第i个元素不存在
+//		return ERROR;
+//	*e = p->data;
+//	return OK;
+//}
+//
+////插入
+//ElemType ListInsert(LinkList* L, int i, ElemType e)
+//{
+//	LinkList p, s;
+//	p = *L;
+//	int j = 1;
+//	while (p && j < i)
+//	{
+//		p = p->next;
+//		j++;
+//	}
+//	if (!p | j > i)
+//		return ERROR;
+//	s = (LinkList)malloc(sizeof(Node));
+//	s->data = e;
+//	s->next = p->next;
+//	p->next = s;
+//	return OK;
+//}
+//
+////删除
+//ElemType ListDelete(LinkList* L,int i,ElemType* e)
+//{
+//	LinkList p, q;
+//	p = *L;
+//	int j = i;
+//	while (p->next&&j<i)
+//	{
+//		p = p->next;
+//		j++;
+//	}
+//	if (!(p->next) || j > i)
+//		return ERROR;
+//	q = p->next;
+//	p->next = q->next;
+//	*e = q->data;
+//	free(q);
+//	return OK;
+//}
+////对插入or删除数据比较频繁的操作，单链表的效率优势比较明显
+//
+//ElemType ClearList(LinkList* L)
+//{
+//	LinkList p, q;
+//	p = (*L)->next;
+//	while (p)
+//	{
+//		q = p->next;
+//		free(p);
+//		p = q;
+//	}
+//	(*L)->next = NULL;
+//	return OK;
+//}
