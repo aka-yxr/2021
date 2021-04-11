@@ -1,0 +1,112 @@
+//#define _CRT_SECURE_NO_WARNINGS
+//#include<stdio.h>
+//#include<string.h>
+//#include<assert.h>
+//#include<errno.h>
+//#include<stdlib.h>
+//#include<stdbool.h>
+//#include<math.h>
+//
+//////队列 Queue
+////InitQueue(*Q);//初始化一个空队列
+////DestroyQueue(*Q);//若Q存在，则销毁它
+////ClearQueeu(*Q);//将队列Q清空
+////QueueEmpty(Q);//判断队列是否为空
+////GetHead(Q, *e);//返回队头元素的值
+////EnQueue(*Q, e);//插入e到队尾
+////DeQueue(*Q, *e);//删除队列Q中的队头元素，并返回其值
+////QueueLength(Q);//返回队列Q的元素个数
+//
+////循环队列
+//#define MAXSIZE 1000
+//#define ERROR -1
+//#define OK 1
+//typedef int QElemType;
+//
+////typedef struct
+////{
+////	QElemType data[MAXSIZE];
+////	int font;//头
+////	int rear;//尾
+////}SqQueue;
+////
+//////初始化一个空队列
+////int InitQueue(SqQueue* Q)
+////{
+////	Q->font = Q->rear = 0;
+////	return OK;
+////}
+////
+//////返回队列的长度
+////int QueueLength(SqQueue Q)
+////{
+////	return (Q.rear - Q.font + MAXSIZE) % MAXSIZE;
+////}
+////
+//////入队
+////int EnQueue(SqQueue* Q, QElemType e)
+////{
+////	if ((Q->rear + 1) % MAXSIZE == Q->font)//队满
+////		return ERROR;
+////	Q->data[Q->rear] = e;
+////	Q->rear = (Q->rear + 1) % MAXSIZE;
+////	return OK;
+////}
+////
+//////出队
+////int DeQueue(SqQueue* Q, QElemType* e)
+////{
+////	if (Q->font == Q->rear)//队列为空
+////		return ERROR;
+////	*e = Q->data[Q->font];
+////	Q->font = (Q->font + 1) % MAXSIZE;
+////
+////	return OK;
+////}
+//
+//
+////链式队列
+//typedef struct QNode//结点结构
+//{
+//	QElemType data;
+//	struct QNode* next;
+//}QNode,*QueuePtr;
+//
+//typedef struct//队列结构
+//{
+//	QueuePtr font, rear;
+//}LinkQueue;
+//
+////入队
+//int QnQueue(LinkQueue* Q, QElemType e)
+//{
+//	QueuePtr s = NULL;
+//	//s是结点
+//	s = (QueuePtr)malloc(sizeof(QNode));
+//	if (s == NULL)
+//		exit(1);
+//	s->data = e;
+//	s->next = NULL;
+//	//入到队尾
+//	Q->rear->next = s;
+//	//把s变成新的队尾
+//	Q->rear = s;
+//	return OK;
+//}
+//
+////出队
+//int DeQueue(LinkQueue* Q, QElemType* e)
+//{
+//	QueuePtr p;
+//	if (Q->font == Q->rear)
+//		return ERROR;
+//	//头结点所指向的第二个结点
+//	p = Q->font->next;
+//	*e = p->data;
+//	Q->font->next = p->next;//把第二个结点变成头节点
+//	if (Q->rear == p)
+//		Q->rear = Q->font;
+//	free(p);
+//	return OK;
+//
+//}
