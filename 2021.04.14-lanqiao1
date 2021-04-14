@@ -1,0 +1,113 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+#include<string.h>
+#include<assert.h>
+#include<errno.h>
+#include<stdlib.h>
+#include<stdbool.h>
+#include<math.h>
+
+
+//纪念日
+//int main()
+//{
+//	int year = 1921;
+//	int min = 0;
+//	//int month = 7;
+//	int day = 8;
+//	int num1[] = { 31,28,31,30,31,30,31,31,30,31,30,31 };
+//	int num2[] = { 31,29,31,30,31,30,31,31,30,31,30,31 };
+//
+//	for (year = 1921; year <= 2020; year++)
+//	{
+//		if (year == 1921)
+//		{
+//			for (int i = 7; i < 12; i++)
+//			{
+//				day += num1[i];
+//			}
+//			continue;
+//		}
+//		if (year == 2020)
+//		{
+//			for (int i = 0; i < 6; i++)
+//			{
+//				day += num2[i];
+//			}
+//			break;
+//		}
+//		if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0)
+//		{
+//			for (int i = 0; i < 12; i++)
+//			{
+//				day += num2[i];
+//			}
+//		}
+//		else
+//		{
+//			for (int i = 0; i < 12; i++)
+//			{
+//				day += num1[i];
+//			}
+//		}
+//	}
+//	day++;
+//	printf("day = %d\n", day);
+//	//day -= 22;
+//	min = day * 24 * 60;
+//	printf("%d\n", min);
+//}
+
+//#include <iostream>
+//using namespace std;
+//int f[1020][1020];
+//int main()
+//{
+//    f[0][0] = 1;
+//    for (int i = 1; i <= 1010; i++)//上面一行可以放1～1010个
+//        for (int j = 0; j <= i; j++)//下面一行放的范围是0～i 不能比上面多哦
+//        {
+//            f[i][j] += f[i - 1][j] % 2020;//可以把i+j这个数紧挨着放上面
+//            if (j)
+//                f[i][j] += f[i][j - 1] % 2020;//也可以放下面 注意不要越界
+//        }
+//    cout << f[1010][1010] << endl;
+//    return 0;
+//}
+
+//int main()
+//{
+//	long long n;
+//	scanf("%lld", &n);
+//	//printf("%d ", n);
+//	while (n)
+//	{
+//		
+//		printf("%lld ", n);
+//		n >>= 1;
+//	}
+//}
+
+//解码
+//int main()
+//{
+//	char str[1001];
+//	for (int i = 0; i < 1001; i++)
+//	{
+//		str[i] = '\0';
+//	}
+//	gets(str);
+//	int len = strlen(str);
+//	for (int i = 0; i < len; i++)
+//	{
+//		if (isalpha(str[i]) && isdigit(str[i + 1]))
+//		{
+//			for (int j = 0; j < (str[i + 1] - '0'); j++)
+//				printf("%c", str[i]);
+//			i++;
+//		}
+//		else
+//			printf("%c", str[i]);
+//	}
+//
+//}
