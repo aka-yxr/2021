@@ -1,0 +1,109 @@
+//
+//#include <stdio.h>
+//#include <stdlib.h>
+//
+//typedef char ElementType;
+//typedef struct TNode* Position;
+//typedef Position BinTree;
+//struct TNode {
+//    ElementType Data;
+//    BinTree Left;
+//    BinTree Right;
+//};
+//
+//BinTree CreatBinTree(); /* 实现细节忽略 */
+//void InorderTraversal(BinTree BT);
+//void PreorderTraversal(BinTree BT);
+//void PostorderTraversal(BinTree BT);
+//void LevelorderTraversal(BinTree BT);
+//
+//int main()
+//{
+//    BinTree BT = CreatBinTree();
+//    printf("Inorder:");
+//    InorderTraversal(BT);
+//    printf("\n");
+//    printf("Preorder:");
+//    PreorderTraversal(BT);
+//    printf("\n");
+//    printf("Postorder:");
+//    PostorderTraversal(BT);
+//    printf("\n");
+//    printf("Levelorder:");
+//    LevelorderTraversal(BT);
+//    printf("\n");
+//    return 0;
+//}
+//
+//特别的，需要注意BT是否为空的情况。
+//void InorderTraversal(BinTree BT)
+//{
+//    if (BT)
+//    {
+//        InorderTraversal(BT->Left);
+//        printf(" %c", BT->Data);
+//        InorderTraversal(BT->Right);
+//    }
+//}
+//void PreorderTraversal(BinTree BT)
+//{
+//    if (BT)
+//    {
+//        printf(" %c", BT->Data);
+//        PreorderTraversal(BT->Left);
+//        PreorderTraversal(BT->Right);
+//    }
+//}
+//void PostorderTraversal(BinTree BT)
+//{
+//    if (BT)
+//    {
+//        PostorderTraversal(BT->Left);
+//        PostorderTraversal(BT->Right);
+//        printf(" %c", BT->Data);
+//    }
+//}
+//void LevelorderTraversal(BinTree BT)
+//{
+//    BinTree que[101] = { 0 }, t;
+//    int head = 0, rear = 0;
+//    if (BT)
+//    {
+//        que[rear++] = BT;
+//        while (head != rear)
+//        {
+//            t = que[head++];
+//            printf(" %c", t->Data);
+//            if (t->Left)
+//                que[rear++] = t->Left;
+//            if (t->Right)
+//                que[rear++] = t->Right;
+//        }
+//    }
+//}
+//
+//创建
+//BinTree CreatBinTree()
+//{
+//    char ch;
+//    ch = getchar();
+//    getchar();
+//
+//    BinTree root = NULL;
+//    root = (struct TNode*)malloc(sizeof(struct TNode*));
+//    if (root == NULL)
+//    {
+//        printf("创建失败\n");
+//        return NULL;
+//    }
+//    if (ch <= '#')
+//        return NULL;
+//    else
+//    {
+//        root->Data = ch;
+//        root->Left = CreatBinTree();
+//        root->Right = CreatBinTree();
+//    }
+//
+//    return root;
+//}
