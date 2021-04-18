@@ -1,0 +1,328 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+#include<string.h>
+#include<assert.h>
+#include<errno.h>
+#include<stdlib.h>
+#include<stdbool.h>
+#include<math.h>
+
+//int main(int argc, char* argv[])
+//{
+//    // 请在此输入您的代码
+//    int count = 0;
+//    for (int i = 1;; i++)
+//    {
+//        if (count >= 2020)
+//        {
+//            printf("%d", i);
+//            break;
+//        }
+//        count += i;
+//    }
+//    return 0;
+//}
+
+//int main(int argc, char* argv[])
+//{
+//    // 请在此输入您的代码
+//    int a[30] = { 87,39,35,1,99,10,54,1,46,24,74,62,49,13,2,80,24,58,8,14,83,23,97,85,3,2,86,10,71,15 };
+//    int count = 0;
+//    for (int i = 0; i < 30; i++)
+//        for (int j = i + 1; j < 30; j++)
+//        {
+//            if (a[i] > a[j] && i < j)
+//                count++;
+//        }
+//    printf("%d", count);
+//    return 0;
+//}
+
+//#include<iostream>
+//#include<cmath>
+//using namespace std;
+//int main()
+//{
+//    int n = 1;
+//    while (1)
+//    {
+//        if (pow(2, n) >= 192)
+//            break;
+//        n++;
+//    }
+//    cout << n*4 << endl;
+//}
+
+//int main(int argc, char* argv[])
+//{
+//    // 请在此输入您的代码
+//    int sum = 0;
+//    char ch[] = "LANQIAO";
+//    for (int i = 0; i < 7; i++)
+//    {
+//        for (int j = i + 1; j < 7; j++)
+//        {
+//            int tmp = ch[i] - ch[j];
+//            sum += abs(tmp);
+//        }
+//    }
+//    printf("%d\n", sum);
+//    return 0;
+//}
+
+//int main()
+//{
+//	int f[2022][1020];
+//	//f[2020][1010];
+//	f[1][1] = 1;
+//	for (int i = 1; i <= 2020; i++)
+//	{
+//		for (int j = 1; j <= i; j++)
+//		{
+//			f[i][j] += f[i - 1][j - 1];
+//			//第二行大于等于第一行的时候
+//			if (j >= i - j)
+//			{
+//				f[i][j] += f[i - 1][j];
+//			}
+//			f[i][j] %= 2020;
+//		}
+//	}
+//	printf("%d\n",f[2020][1010] );
+//}
+
+//int main()
+//{
+//	for (int a = 1; a <= 9; a++) {
+//		for (int b = 0; b <= 9; b++) {
+//			for (int c = 0; c <= 9; c++) {
+//				for (int d = 0; d <= 9; d++) {
+//					for (int e = 0; e <= 9; e++) {
+//						for (int n = 1; n <= 9; n++) {
+//
+//							if (a != b && a != c && a != d && a != e && b != c && b != d && b != e && c != d
+//								&& c != e && d != e) {
+//								int i = e + d * 10 + c * 100 + b * 1000 + a * 10000;
+//								int j = a + b * 10 + c * 100 + d * 1000 + e * 10000;
+//								if (i * n == j) {
+//									printf("%d * %d = %d\n",i, n,j);
+//								}
+//							}
+//
+//						}
+//					}
+//				}
+//			}
+//		}
+//	}
+//}
+
+//int main()
+//{
+//    // 请在此输入您的代码
+//    int a[5];
+//    int i, j, sum, num;
+//    int flag = 0;
+//    for (sum = 12345; sum <= 98765; sum++)
+//    {
+//        num = sum;
+//        for (i = 0; i < 5; i++)
+//        {
+//            a[i] = num % 10;
+//            num = num / 10;
+//        }
+//
+//        if ((a[0] * 10000 + a[1] * 1000 + a[2] * 100 + a[3] * 10 + a[4]) % sum == 0 && a[0] != a[1] && a[0] != a[2] && a[0] != a[3] && a[0] != a[4] && a[1] != a[2] && a[1] != a[3] && a[1] != a[4] && a[2] != a[3] && a[2] != a[4] && a[3] != a[4])
+//        {
+//            printf("%d", sum);
+//            flag = 1;
+//            break;
+//        }
+//
+//        if (flag == 1) break;
+//    }
+//    return 0;
+//}
+
+//数列求和
+//int main()
+//{
+//	int a = 1, b = 1, c = 1, d = 3;
+//	for (int i = 4; i <= 20190324; i++)
+//	{
+//		d = (a + b + c) % 10000;
+//		a = b;
+//		b = c;
+//		c = d;//不断更新a,b,c,三个数; 
+//	}
+//	printf("%d", d);
+//
+//	return 0;
+//}
+
+
+//明码
+//int main()
+//{
+//	long long sum = 0;
+//	sum = pow(9, 9);
+//	printf("%lld\n", sum);
+//}
+
+//void ej(int n)
+//{
+//	int k = 1, s[9];
+//	while (k)
+//	{
+//		for (k = 1; k < 9; k++)
+//		{
+//			s[k] = n % 2;
+//			n = n / 2;
+//		}
+//		for (k = 8; k > 0; k--)
+//		{
+//			if (s[k] == 0)
+//				printf(" ");
+//			else
+//				printf(".");
+//		}
+//	}
+//}
+//
+//void fej(int n)
+//{
+//	int k = 1, s[9];
+//	n = -n;
+//	while (k)
+//	{
+//		for (k = 1; k < 9; k++)
+//		{
+//			if (n % 2 == 0)
+//				s[k] = 1;
+//			else
+//				s[k] = 0;
+//			n = n / 2;
+//		}
+//		if (s[1] == 0)
+//		{
+//			s[1] = 1;
+//			for (k = 8; k > 0; k--)
+//				if (s[k] == 0)
+//					printf(" ");
+//				else
+//					printf(".");
+//		}
+//		else
+//		{
+//			s[1] += 1;
+//			for (k = 1; k < 9; k++)
+//			{
+//				if (s[k] == 1)
+//				{
+//					break;
+//				}
+//				else if (s[k] == 2)
+//				{
+//					s[k] = 0;
+//					s[k + 1] += 1;
+//				}
+//			}
+//			for (k = 8; k > 0; k--)
+//				if (s[k] == 0)
+//					printf(" ");
+//				else
+//					printf(".");
+//		}
+//	}
+//}
+//
+//int main()
+//{
+//	freopen("in.txt", "r", stdin);
+//	int n, i, j;
+//	for (j = 0; j < 10; j++)
+//	{
+//		for (i = 1; i < 33; i++)
+//		{
+//			scanf("%d", &n);
+//			if (n >= 0)
+//				ej(n);
+//			else
+//				fej(n);
+//			if (i % 2 == 0)
+//				printf("\n");
+//		}
+//		printf("******\n");
+//	}
+//	return 0;
+//}
+
+
+//int main()
+//{
+//    char s;
+//
+//    int n = 52;
+//    while (n>1)
+//    {
+//        int a = n % 26;
+//        n /= 26;
+//        if (a == 0)
+//            printf("Z");
+//        else
+//        {
+//            s = 'A' + a - 1;
+//            printf("%c", s);//这里输出是从个位开始，写答案是需要翻过来。
+//        }
+//    }
+//    return 0;
+//}
+
+
+//数素数问题
+//int Prime(int p)
+//{
+//	for (int i = 2; i < sqrt(p) + 1; i++)
+//	{
+//		if (p % i == 0)
+//			return -1;
+//	}
+//	return 1;
+//}
+//int main()
+//{
+//	int a[] = { 1499,1949,4199,4919,4991,9149,9419,9491,9941,9914 };
+//	int count = 0;
+//	for (int i = 0; i < 10; i++)
+//	{
+//		if (Prime(a[i]))
+//		{
+//			printf("%d\n", a[i]);
+//			count++;
+//		}
+//	}
+//	printf("count = %d\n", count);
+//}
+
+////微生物增值问题
+//int main()
+//{
+//	//X=10,Y=90;
+//	//经过计算可以知道，给出的新生X是干扰项。
+//	int X = 10, Y = 90;
+//	for (int i = 1; i <= 60; i++)
+//	{
+//		Y -= X;
+//		if (i % 3 == 0)
+//		{
+//			X += X;
+//		}
+//		if (i % 2 == 0)
+//		{
+//			Y += Y;
+//		}
+//		if (Y < 0)
+//			break;
+//	}
+//	printf("%d\n", Y);
+//}
