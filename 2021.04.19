@@ -1,0 +1,89 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+#include<string.h>
+#include<assert.h>
+#include<errno.h>
+#include<stdlib.h>
+#include<stdbool.h>
+#include<math.h>
+
+#define OK 1
+#define ERROR -1
+
+////二叉树的先序创建(递归)
+//void CreatBinTree(BinTree* T)
+//{
+//	TElemType ch;
+//	scanf("%c", &ch);
+//	if (ch == '#')
+//		*T = NULL;
+//	else
+//	{
+//		*T = (BinTree)malloc(sizeof(BinTree));
+//		if (!*T)
+//			exit(-1);
+//		(*T)->data = ch;
+//		CreatBinTree(&(*T)->Left);
+//		CreatBinTree(&(*T)->Right);
+//
+//	}
+//}
+
+
+////线索二叉树
+////指向前驱和后继的指针称为线索，加上线索的二叉链表称为线索链表，相应的二叉树就称之为线索二叉树
+//#define OK 1
+//#define ERROR -1
+//typedef enum {Link,Thread} PointerTag;
+//typedef int TElemType;
+//
+//typedef struct BTNode
+//{
+//	TElemType data;
+//	struct BTNode* lchild, * rchild;
+//	PointerTag LTag;
+//	PointerTag RTag;//左右标志
+//}BTNode,*BTTree;
+//
+//BTTree pre;
+//
+////中序遍历
+//void InThreading(BTTree p)
+//{
+//	if (p)
+//	{
+//		InThreading(p->lchild);
+//		if (!p->lchild)
+//		{
+//			p->LTag = Thread;
+//			p->lchild = pre;
+//		}
+//		if (!pre->rchild)
+//		{
+//			pre->RTag = Thread;
+//			pre->rchild = p;
+//		}
+//		pre = p;
+//		Inthreading(p->rchild);
+//	}
+//}
+//
+//int InOrderTraverse_Thr(BTTree T)
+//{
+//	BTTree p = NULL;
+//	p = T->lchild;
+//	while (p != T)
+//	{
+//		while (p->LTag == Link)
+//			p = p->lchild;
+//		printf("%c ", p->data);
+//		while (p->RTag == Thread && p->rchild != T)
+//		{
+//			p = p->rchild;
+//			printf("%c ", p->data);
+//		}
+//		p = p->rchild;
+//	}
+//	return OK;
+//}
+
