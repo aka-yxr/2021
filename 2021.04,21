@@ -1,0 +1,273 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+#include<string.h>
+#include<assert.h>
+#include<errno.h>
+#include<stdlib.h>
+#include<stdbool.h>
+#include<math.h>
+
+#define OK 1
+#define ERROR -1
+
+//int Max(int a, int b)
+//{
+//	return a > b ? a : b;
+//}
+//
+//int main()
+//{
+//	int arr[] = { 1,2,4,1,7,8,3 };
+//	int len = sizeof(arr) / sizeof(arr[0]);
+//	int opt[7] = { 0 };
+//	opt[0] = arr[0];
+//	opt[1] = Max(arr[0], arr[1]);
+//	for (int i = 2; i < len; i++)
+//	{
+//		int A = opt[i - 2] + arr[i];
+//		int B = opt[i - 1];
+//		opt[i] = Max(A, B);
+//	}
+//	printf("%d\n", opt[len - 1]);
+//	return 0;
+//}
+
+//int main()
+//{
+//	int arr[] = { 3,34,4,12,5,2 };
+//	int S = 9;
+//	int len = sizeof(arr) / sizeof(arr[0]);
+//
+//
+//	return 0;
+//}
+
+//字符串hash初步
+//int hashFunc(char s[], int len)
+//{
+//	int id = 0;
+//	for (int i = 0; i < len; i++)
+//	{
+//		id = id * 26 + (s[i] - 'A');
+//	}
+//	return id;
+//}
+
+//int hashFunc(char s[], int len)
+//{
+//	int id = 0;
+//	for (int i = 0; i < len; i++)
+//	{
+//		if (s[i] >= 'A' && s[i] <= 'Z')
+//			id = id * 52 + (s[i] - 'A');
+//		else if (s[i] >= 'a' && s[i] <= 'z')
+//			id = id * 52 + (s[i] - 'a') + 26;
+//	}
+//	return id;
+//}
+
+//int hashFunc(char s[], int len)
+//{
+//	int id = 0;
+//	for (int i = 0; i < len; i++)
+//	{
+//		id = id * 26 + (s[i] - 'A');
+//	}
+//	id = id * 10 + (s[len - 1] - '0');
+//	return id;
+//}
+
+//#include<cstdio>
+//const int maxn = 100;
+//char S[maxn][5], tmp[5];
+//int hashTable[ 26 * 26 * 26 + 10 ];
+//int hashFunc(char s[], int len)
+//{
+//	int id = 0;
+//	for (int i = 0; i < len; i++)
+//	{
+//		id = id * 26 + (s[i] - 'A');
+//	}
+//	return id;
+//}
+//
+//int main()
+//{
+//	int n, m;
+//	scanf("%d%d", &n, &m);
+//	for (int i = 0; i < n; i++)
+//	{
+//		scanf("%s", S[i]);
+//		int id = hashFunc(S[i], 3);
+//		hashTable[id]++;
+//	}
+//	for (int i = 0; i < m; i++)
+//	{
+//		scanf("%d", &m);
+//		int id = hashFunc(tmp, 3);
+//		printf("%d\n", hashTable[id]);
+//	}
+//	return 0;
+//}
+
+//递归
+//#include<cstdio>
+//const int maxn = 11;
+//int n, p[maxn], hashTable[maxn] = { false };
+//
+//void generateP(int index)
+//{
+//	if (index == n + 1)
+//	{
+//		for (int i = 1; i <= n; i++)
+//			printf("%d", p[i]);
+//		printf("\n");
+//		return;
+//	}
+//	
+//	for (int x = 1; x <= n; x++)
+//	{
+//		if (hashTable[x] == false)
+//		{
+//			p[index] = x;
+//			hashTable[x] = true;
+//			generateP(index + 1);
+//			hashTable[x] = false;
+//		}
+//	}
+//}
+//int main()
+//{
+//	n = 3;
+//	generateP(1);
+//	return 0;
+//}
+
+//皇后问题
+//#include<cstdio>
+//const int maxn = 11;
+//int n, p[maxn], hashTable[maxn] = { false };
+//
+//int count = 0;
+//void generateP(int index)
+//{
+//	if (index == n + 1)
+//	{
+//		bool flag = true;
+//		for (int i = 1; i <= n; i++)
+//			for (int j = i + 1; j <= n; j++)
+//				if (abs(i - j) == abs(p[i] - p[j]))
+//					flag = false;
+//		if (flag)
+//			count++;
+//		return;
+//	}
+//	
+//	for (int x = 1; x <= n; x++)
+//	{
+//		if (hashTable[x] == false)
+//		{
+//			p[index] = x;
+//			hashTable[x] = true;
+//			generateP(index + 1);
+//			hashTable[x] = false;
+//		}
+//	}
+//}
+//int main()
+//{
+//	n = 8;
+//	generateP(1);
+//	return 0;
+//}
+
+//#include<cstdio>
+//#include<algorithm>
+//using namespace std;
+//const int maxn = 110;
+//struct Inteval {
+//	int x, y;
+//}I[maxn];
+//
+////从大到小排序
+//bool cmp(Inteval a, Inteval b)
+//{
+//	if (a.x != b.x)
+//		return a.x > b.x;
+//	else
+//		return a.y < b.y;
+//}
+//
+//int main()
+//{
+//	int n;
+//	while (scanf("%d", &n), n != 0)
+//	{
+//		for (int i = 0; i < n; i++)
+//		{
+//			scanf("%d%d", &I[i].x, &I[i].y);
+//		}
+//		sort(I, I + n, cmp);
+//		//ans记录不相交的区间个数
+//		int ans = 1;
+//		//lastx记录上一个区间的左端点
+//		int lastx = I[0].x;
+//		for (int i = 01; i < n; i++)
+//		{
+//			if (I[i].y <= lastx)
+//			{
+//				lastx = I[i].x;
+//				ans++;
+//			}
+//		}
+//		printf("%d\n", ans);
+//	}
+//	return 0;
+//}
+
+
+//#include<cstdio>
+//const int maxn = 100010;
+//bool hashTable[maxn] = { false };
+//
+//int main()
+//{
+//	int n, m, x;
+//	scanf("%d%d", &n, &m);
+//	for (int i = 0; i < n; i++)
+//	{
+//		scanf("%d", &x);
+//		hashTable[x] = true;
+//	}
+//	for (int i = 0; i < m; i++)
+//	{
+//		scanf("%d", &x);
+//		if (hashTable[x] == true)
+//			printf("Yes\n");
+//		else
+//			printf("No\n");
+//	}
+//	return 0;
+//}
+
+//int main()
+//{
+//    int L, N;
+//    scanf("%d%d", &L, &N);
+//    int all = pow(26, L) - N;
+//    int num[10] = { 0 };
+//    int i = 0;
+//    while (L--)
+//    {
+//        num[i++] = all % 26;
+//        all /= 26;
+//    }
+//    for (int j = i - 1; j >= 0; j--)
+//    {
+//        char ch = num[j] + 'a';
+//        printf("%c", ch);
+//    }
+//    printf("\n");
+//
+//    return 0;
+//}
