@@ -1,0 +1,210 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+#include<string.h>
+#include<assert.h>
+#include<errno.h>
+#include<stdlib.h>
+#include<stdbool.h>
+#include<math.h>
+
+#define OK 1
+#define ERROR -1
+
+
+//结构复杂，操作简单 
+//双向循环链表
+typedef int TElemType;
+
+typedef struct ListNode
+{
+	struct ListNode* prev;
+	struct ListNode* next;
+	TElemType Data;
+}ListNode;
+
+//创建结点
+ListNode* BuyListNode(TElemType e)
+{
+	ListNode* node = malloc(sizeof(ListNode));
+	node->next = NULL;
+	node->prev = NULL;
+	node->Data = e;
+	return node;
+}
+
+//头插
+void ListPushFront(ListNode* phead, TElemType x)
+{
+	assert(phead);
+
+	ListNode* newnode = BuyListNode(x);
+	ListNode* first = phead->next;
+
+	phead->next = newnode;
+	newnode->prev = phead;
+
+	newnode->next = first;
+	first->prev = newnode;
+
+}
+
+//头删
+void ListPopFront(ListNode* phead)
+{
+	assert(phead);
+
+	ListNode* first = phead->next;
+	ListNode* second = first->next;
+
+	phead->next = second;
+	second->prev = phead;
+
+	free(first);
+
+}
+
+
+//尾插
+void ListPushBack(ListNode* phead, TElemType x)
+{
+	assert(phead);
+	ListNode* tail = phead->prev;
+	ListNode* newnode = BuyListNode(x);
+
+	tail->next = newnode;
+	newnode->prev = tail;
+
+	newnode->next = phead;
+	phead->prev = newnode;
+}
+
+//尾删
+void ListPopBack(ListNode* phead)
+{
+	assert(phead);
+
+	ListNode* tail = phead->prev;
+	ListNode* tailPrev = tail->prev;
+
+	phead->prev = tailPrev;
+	tailPrev->next = phead;
+
+	free(tail);
+}
+
+//打印
+void ListPrint(ListNode* phead)
+{
+	ListNode* cur = phead->next;
+	while (cur != phead)
+	{
+		printf("%d ", cur->Data);
+		cur = cur->next;
+	}
+}
+
+//创建
+ListNode* CreatList()
+{
+	ListNode* phead = BuyListNode(0);
+	phead->next = phead;
+	phead->prev = phead;
+
+	return phead;
+}
+
+//查找
+ListNode* ListFind(ListNode* phead,TElemType x)
+{
+	assert(phead);
+	ListNode* cur = phead->next;
+	while (cur != phead)
+	{
+		if (cur->Data == x)
+			return cur;
+		cur = cur->next;
+	}
+	return NULL;
+}
+
+//在pos前面插入
+void ListInsert(ListNode* pos, TElemType x)
+{
+	assert(pos);
+	ListNode* posPrev = pos->prev;
+	ListNode* newnode = BuyListNode(x);
+
+	posPrev->next = newnode;
+	newnode->prev = posPrev;
+	newnode->next = pos;
+	pos->prev = newnode;
+
+}
+
+void ListErase(ListNode* pos)
+{
+	assert(pos);
+	//assert(pos != phead);
+	ListNode* posPrev = pos->prev;
+	ListNode* posNext = pos->next;
+
+	free(pos);
+	posPrev->next = posNext;
+	posNext->prev = posPrev;
+
+}
+
+
+//测试
+void TestList1()
+{
+	ListNode* phead = CreatList();
+	ListPushBack(phead, 1);
+	ListPushBack(phead, 3);
+	ListPushBack(phead, 2);
+	ListPushBack(phead, 4);
+	ListPrint(phead);
+	printf("\n");
+
+	ListPopBack(phead);
+	ListPrint(phead);
+	printf("\n");
+
+	ListPushFront(phead, 9);
+	ListPrint(phead);
+	printf("\n");
+
+	ListPopFront(phead);
+	ListPrint(phead);
+	printf("\n");
+}
+
+void TestList2()
+{
+	ListNode* phead = CreatList();
+	ListPushBack(phead, 1);
+	ListPushBack(phead, 3);
+	ListPushBack(phead, 2);
+	ListPushBack(phead, 4);
+	ListPrint(phead);
+	printf("\n");
+
+	ListNode* pos = ListFind(phead, 3);
+	ListInsert(pos, 30);
+	ListPrint(phead);
+	printf("\n");
+
+	ListErase(pos);
+	ListPrint(phead);
+
+
+}
+
+int main()
+{
+
+	//TestList1();
+	TestList2();
+
+	return 0;
+}
