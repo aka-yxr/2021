@@ -1,0 +1,102 @@
+//对于二叉搜索树来说，左子树小于根节点，右子树大于根节点
+bool IsBST ( BinTree T )
+{
+    
+    if(T==NULL||((T->Left==NULL)&&(T->Right==NULL)))
+        return true;
+    BinTree BT;
+    BT=T->Left;
+    if(BT)
+    {
+        while(BT->Right)
+            BT=BT->Right;
+        if(BT->Data > T->Data)
+            return false;
+    }
+    BT=T->Right;
+    if(BT)
+    {
+        while(BT->Left)
+            BT=BT->Left;
+        if(BT->Data < T->Data)
+            return false;
+    }
+    return true;
+}
+
+
+int GetHeight( BinTree BT )
+//分别求出左子树和右子树的高度，取较大者的值
+{
+    int HL=0,HR=0,HMax=0;
+    if(BT)
+    {
+        HL=GetHeight(BT->Left);
+        HR=GetHeight(BT->Right);
+        HMax=HL>HR?HL:HR;
+        return HMax+1;
+    }
+    else
+        return 0;
+}
+
+
+//特别的，需要注意BT是否为空的情况。
+void InorderTraversal( BinTree BT )
+{
+    if(BT)
+    {
+        InorderTraversal(BT->Left);
+        printf(" %c",BT->Data);
+        InorderTraversal(BT->Right);
+    }
+}
+void PreorderTraversal( BinTree BT )
+{
+    if(BT)
+    {
+        printf(" %c",BT->Data);
+        PreorderTraversal(BT->Left);
+        PreorderTraversal(BT->Right);
+    }
+}
+void PostorderTraversal( BinTree BT )
+{
+    if(BT)
+    {
+        PostorderTraversal(BT->Left);
+        PostorderTraversal(BT->Right);
+        printf(" %c",BT->Data);
+    }
+}
+void LevelorderTraversal( BinTree BT )
+{
+    BinTree que[101],t;
+    int head=0,rear=0;
+    if(BT)
+    {
+        que[rear++]=BT;
+        while(head!=rear)
+        {
+            t=que[head++];
+            printf(" %c",t->Data);
+            if(t->Left)
+                que[rear++]=t->Left;
+            if(t->Right)
+                que[rear++]=t->Right;
+        }
+    }
+}
+
+
+void PreorderPrintLeaves( BinTree BT )
+{
+    if(BT == NULL)
+        return;
+    if(BT->Left == NULL && BT->Right == NULL)
+        printf(" %c",BT->Data);
+    if(BT->Left)
+        PreorderPrintLeaves(BT ->Left);
+    if(BT->Right)
+        PreorderPrintLeaves(BT ->Right);
+}
