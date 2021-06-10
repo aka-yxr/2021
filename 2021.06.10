@@ -1,0 +1,88 @@
+#include <stdio.h>
+#include <string.h>
+#include<stdlib.h>
+
+#define MaxSize 1001
+typedef int Postion;
+
+struct customer
+{
+    Postion data[MaxSize];
+    Postion top;
+};
+
+//空队
+struct customer* CreateQ()
+{
+    struct customer* Queue;
+    Queue=(struct customer*)malloc(sizeof(struct customer));
+    Queue->top=-1;
+    return Queue;
+}
+
+//入队
+void Push(struct customer* Queue,Postion x)
+{
+    Queue->data[++Queue->top]=x;
+}
+
+//出队
+int PopQueue(struct customer* Queue)
+{
+    if(Queue->top==-1)
+        return -1;
+    return Queue->data[Queue->top--];
+}
+
+
+int main()
+{
+    int n,num[MaxSize];
+    int i=0,k=0;
+    struct customer *Queue1,*Queue2;
+    Queue1=CreateQ();
+    Queue2=CreateQ();
+    scanf("%d",&n);
+    
+    for(k=1;k<=n;k++)
+    {
+        scanf("%d",&num[k]);
+    }
+    
+    for(i=n;i>=1;i--)
+    {
+        if(num[i]%2==1)
+            Push(Queue1,num[i]);
+        else
+            Push(Queue2,num[i]);
+    }
+    
+    int time=0,count=0;
+    for(time=1;Queue1->top!=-1||Queue2->top!=-1;time++)
+    {
+        int tmp=PopQueue(Queue1);
+        if(tmp!=-1)
+        {
+            if(count!=0)
+                printf(" ");
+            else
+                count=1;
+            printf("%d",tmp);
+        }
+        
+        if(time%2==0)
+        {
+            tmp=PopQueue(Queue2);
+            if(tmp!=-1)
+            {
+                if(count!=0)
+                    printf(" ");
+                else
+                    count=1;
+                printf("%d",tmp);
+            }
+        }
+    }
+ 
+    return 0;
+}
