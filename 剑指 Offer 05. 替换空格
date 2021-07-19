@@ -1,0 +1,52 @@
+替换空格
+请实现一个函数，把字符串中的每个空格替换成"%20"。
+
+你可以假定输入字符串的长度最大是 1000。
+
+注意输出字符串的长度可能大于 1000。
+
+样例
+输入："We are happy."
+
+输出："We%20are%20happy."
+
+--------------------------------------------------
+AC
+1. 求得字符串长度len
+2. 在堆上申明3len+1长度char的空间，首地址res，不能少于3len+1。因为一个空格需要3个字符替换，最坏的情况是s全是空格，另外字符串结束标准'\0'占一个字符。
+3. 遍历s和res，s中出现空格，res中连续写入'%20'，否则*fast = *slow直接拷贝。
+4. 记得res末尾加上字符串结束标志'\0'。
+5. 返回res首地址。
+--------------------------------------------------
+/**
+ * Note: The returned array must be malloced, assume caller calls free().
+ */
+char* replaceSpaces(char *str)
+{
+    int len = strlen(str);
+    char* res = (char*) malloc(sizeof(char) * len * 3 + 1);
+    char *slow = str;
+    char *fast = res;
+    while (*slow != '\0')
+    {
+        if (*slow != ' ')
+        {
+            *fast = *slow;
+            slow++;
+            fast++;
+        }
+        else
+        {
+            slow++;
+            *fast = '%'; fast++;
+            *fast = '2'; fast++;
+            *fast = '0'; fast++;
+        }
+    }
+    *fast = '\0';
+    return res;
+
+    
+}
+
+--------------------------------------------------
