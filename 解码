@@ -1,0 +1,29 @@
+#include <iostream>
+#include <string>
+#include <cassert>
+using namespace std;
+
+void decode(string &s, int i, string &ans, int left ,int right) {
+    if (i == 0) {
+        assert(left == right);
+        ans[left] = s[i];
+        return;
+    } 
+    if (i < 0) {
+        return;
+    }
+    ans[right] = s[i];
+    ans[left] = s[i - 1];
+    decode(s, i - 2, ans, left + 1, right - 1);
+
+}
+
+int main() {
+    int n;
+    string s, ans;
+    cin >> n >> s;
+    ans = s;
+    decode(s, n - 1, ans, 0, n - 1);
+    cout << ans << endl;
+
+}
